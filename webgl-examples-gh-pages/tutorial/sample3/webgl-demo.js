@@ -1,5 +1,5 @@
+let colors = []
 main();
-
 //
 // Start here
 //
@@ -7,7 +7,6 @@ function main() {
   const canvas = document.querySelector('#glcanvas');
   const gl = canvas.getContext('webgl');
   window.gl = gl
-
   // If we don't have a GL context, give up now
 
   if (!gl) {
@@ -67,9 +66,9 @@ function main() {
   const buffers = initBuffers(gl);
 
   // Draw the scene
-    window.programInfo = programInfo
+  window.programInfo = programInfo
 
-    drawScene(gl, programInfo, buffers);
+  drawScene(gl, programInfo, buffers);
 }
 
 //
@@ -92,9 +91,9 @@ function initBuffers(gl) {
   // Now create an array of positions for the square.
 
   const positions = [
-     1.0,  1.0,
-    -1.0,  1.0,
-     1.0, -1.0,
+    1.0, 1.0,
+    -1.0, 1.0,
+    1.0, -1.0,
     -1.0, -1.0,
   ];
 
@@ -106,28 +105,32 @@ function initBuffers(gl) {
 
   // Now set up the colors for the vertices
 
-  var colors = [
-    1.0,  1.0,  1.0,  1.0,    // white
-    1.0,  0.0,  0.0,  1.0,    // red
-    0.0,  1.0,  0.0,  1.0,    // green
-    0.0,  0.0,  1.0,  1.0,    // blue
-  ];
-
-  var colors = [
-
-  ];
+  // var colors = [
+  //   1.0,  1.0,  1.0,  1.0,    // white
+  //   1.0,  0.0,  0.0,  1.0,    // red
+  //   0.0,  1.0,  0.0,  1.0,    // green
+  //   0.0,  0.0,  1.0,  1.0,    // blue
+  // ];
   var i = 0
-  while (i <16) {
-     colors.push(Math.random())
+  if (colors.length == 0) {
+    while (i < 16) {
+      colors.push(Math.random())
       i++
+    }
   }
+  i = 0
 
-
-
+  let b = 0.1
+  while (i < 16) {
+    let col = colors[i]
+    let test = i % 2 == 1 ? b : -1 * b
+    let pr = col >= 1 ? -1 * b : col <= 0 ? b : test
+    colors[i] = col + pr
+    i++
+  }
   const colorBuffer = gl.createBuffer();
   gl.bindBuffer(gl.ARRAY_BUFFER, colorBuffer);
   gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(colors), gl.STATIC_DRAW);
-
   return {
     position: positionBuffer,
     color: colorBuffer,
@@ -146,7 +149,6 @@ function drawScene(gl, programInfo, buffers) {
   // Clear the canvas before we start drawing on it.
 
   gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
-
   // Create a perspective matrix, a special matrix that is
   // used to simulate the distortion of perspective in a camera.
   // Our field of view is 45 degrees, with a width/height
@@ -159,14 +161,13 @@ function drawScene(gl, programInfo, buffers) {
   const zNear = 0.1;
   const zFar = 100.0;
   const projectionMatrix = mat4.create();
-
   // note: glmatrix.js always has the first argument
   // as the destination to receive the result.
   mat4.perspective(projectionMatrix,
-                   fieldOfView,
-                   aspect,
-                   zNear,
-                   zFar);
+    fieldOfView,
+    aspect,
+    zNear,
+    zFar);
 
   // Set the drawing position to the "identity" point, which is
   // the center of the scene.
@@ -176,8 +177,8 @@ function drawScene(gl, programInfo, buffers) {
   // start drawing the square.
 
   mat4.translate(modelViewMatrix,     // destination matrix
-                 modelViewMatrix,     // matrix to translate
-                 [-0.0, 0.0, -6.0]);  // amount to translate
+    modelViewMatrix,     // matrix to translate
+    [-0.0, 0.0, -6.0]);  // amount to translate
 
   // Tell WebGL how to pull out the positions from the position
   // buffer into the vertexPosition attribute
@@ -189,14 +190,14 @@ function drawScene(gl, programInfo, buffers) {
     const offset = 0;
     gl.bindBuffer(gl.ARRAY_BUFFER, buffers.position);
     gl.vertexAttribPointer(
-        programInfo.attribLocations.vertexPosition,
-        numComponents,
-        type,
-        normalize,
-        stride,
-        offset);
+      programInfo.attribLocations.vertexPosition,
+      numComponents,
+      type,
+      normalize,
+      stride,
+      offset);
     gl.enableVertexAttribArray(
-        programInfo.attribLocations.vertexPosition);
+      programInfo.attribLocations.vertexPosition);
   }
 
   // Tell WebGL how to pull out the colors from the color buffer
@@ -209,14 +210,14 @@ function drawScene(gl, programInfo, buffers) {
     const offset = 0;
     gl.bindBuffer(gl.ARRAY_BUFFER, buffers.color);
     gl.vertexAttribPointer(
-        programInfo.attribLocations.vertexColor,
-        numComponents,
-        type,
-        normalize,
-        stride,
-        offset);
+      programInfo.attribLocations.vertexColor,
+      numComponents,
+      type,
+      normalize,
+      stride,
+      offset);
     gl.enableVertexAttribArray(
-        programInfo.attribLocations.vertexColor);
+      programInfo.attribLocations.vertexColor);
   }
 
   // Tell WebGL to use our program when drawing
@@ -226,14 +227,13 @@ function drawScene(gl, programInfo, buffers) {
   // Set the shader uniforms
 
   gl.uniformMatrix4fv(
-      programInfo.uniformLocations.projectionMatrix,
-      false,
-      projectionMatrix);
+    programInfo.uniformLocations.projectionMatrix,
+    false,
+    projectionMatrix);
   gl.uniformMatrix4fv(
-      programInfo.uniformLocations.modelViewMatrix,
-      false,
-      modelViewMatrix);
-
+    programInfo.uniformLocations.modelViewMatrix,
+    false,
+    modelViewMatrix);
   {
     const offset = 0;
     const vertexCount = 4;
@@ -292,6 +292,6 @@ function loadShader(gl, type, source) {
 }
 
 setInterval(function () {
-    const buffers = initBuffers(gl);
-    drawScene(gl, programInfo, buffers);
-},30)
+  const buffers = initBuffers(gl);
+  drawScene(gl, programInfo, buffers);
+}, 30)
