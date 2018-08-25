@@ -1,4 +1,5 @@
 let colors = []
+let allColChange = []
 main();
 //
 // Start here
@@ -102,30 +103,36 @@ function initBuffers(gl) {
   // JavaScript array, then use it to fill the current buffer.
 
   gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(positions), gl.STATIC_DRAW);
-
   // Now set up the colors for the vertices
-
   // var colors = [
   //   1.0,  1.0,  1.0,  1.0,    // white
   //   1.0,  0.0,  0.0,  1.0,    // red
   //   0.0,  1.0,  0.0,  1.0,    // green
   //   0.0,  0.0,  1.0,  1.0,    // blue
   // ];
+     let b = 0.1
   var i = 0
-  if (colors.length == 0) {
+  if (colors.length === 0  && allColChange.length === 0 ) {
     while (i < 16) {
       colors.push(Math.random())
+        allColChange.push(b)
       i++
     }
   }
   i = 0
 
-  let b = 0.1
   while (i < 16) {
+
     let col = colors[i]
-    let test = i % 2 == 1 ? b : -1 * b
-    let pr = col >= 1 ? -1 * b : col <= 0 ? b : test
-    colors[i] = col + pr
+
+    if (col >= (1- b)  || col <= b  ){
+      allColChange[i] = -1 * allColChange[i]
+    }
+
+    let test = allColChange[i]
+    let pr = col >= 1 ? -1 * b : (col <= 0 ? b : test)
+
+    colors[i] = col +  pr
     i++
   }
   const colorBuffer = gl.createBuffer();
@@ -136,7 +143,6 @@ function initBuffers(gl) {
     color: colorBuffer,
   };
 }
-
 //
 // Draw the scene.
 //
@@ -145,9 +151,7 @@ function drawScene(gl, programInfo, buffers) {
   gl.clearDepth(1.0);                 // Clear everything
   gl.enable(gl.DEPTH_TEST);           // Enable depth testing
   gl.depthFunc(gl.LEQUAL);            // Near things obscure far things
-
   // Clear the canvas before we start drawing on it.
-
   gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
   // Create a perspective matrix, a special matrix that is
   // used to simulate the distortion of perspective in a camera.
