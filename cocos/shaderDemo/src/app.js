@@ -31,6 +31,8 @@ var HelloWorldLayer = cc.Layer.extend({
             y: size.height / 2
         });
         this.addChild(this.sprite, 0);
+
+        this.sprite.setScale(2.5)
         //gl.getActiveAttrib()
 
 
@@ -185,7 +187,7 @@ var HelloWorldLayer = cc.Layer.extend({
             "\n{\n" +
             "   float radius = u_radius;\n"+
             "   vec2 coord = v_texCoord;\n" +
-            "   coord.x += (sin(coord.y * 8.0 * 3.1415926 + radius*10000.0) / 30.0  )   ;\n" +
+            "   coord.x += (sin(coord.y * 8.0 * 3.1415926 + radius*3.1415926 *1000.0) / 30.0  )   ;\n" +
             "   vec2 uvs = coord.xy;\n" +
             "   gl_FragColor = texture2D(CC_Texture0, coord);\n" +
             "}";
@@ -203,12 +205,13 @@ var HelloWorldLayer = cc.Layer.extend({
     dt:0,
     run1 :function(delta){
         this.dt += delta;
-        if(this.dt>3.14){this.dt-= 3.14;}
+       // if(this.dt>3.14){this.dt-= 3.14;}
         if (this.sprite){
             this.time += delta;
             this.shader.use();
-            var dd = 0.003 * Math.abs(Math.sin(2 * this.dt))
-            this.shader.setUniformLocationWith1f(this.shader.getUniformLocationForName('u_radius'), dd);
+            var dd = 0.003 *(Math.cos(this.dt))
+            console.log(dd)
+            this.shader.setUniformLocationWith1f(this.shader.getUniformLocationForName('u_radius'), 0.003 * this.dt );
             // this.shader.setUniformLocationWith1f(this.shader.getUniformLocationForName('u_lightness'), Math.abs(Math.sin(2 * this.dt)));
             this.shader.updateUniforms();
         }
