@@ -200,6 +200,19 @@ var HelloWorldLayer = cc.Layer.extend({
 
         return true;
     },
+    createSprit:function(){
+        var sprite = new cc.Sprite(res.HelloWorld_png);
+        sprite.attr({
+        x: cc.winSize.width / 2,
+        y: cc.winSize.height / 2
+        });
+        this.addChild(sprite, 0);
+        sprite.setScale(2.5)
+        return sprite
+
+
+    },
+
 
     time : 0,
     dt:0,
@@ -210,10 +223,16 @@ var HelloWorldLayer = cc.Layer.extend({
             this.time += delta;
             this.shader.use();
             var dd = 0.003 *(Math.cos(this.dt))
-            console.log(dd)
+
             this.shader.setUniformLocationWith1f(this.shader.getUniformLocationForName('u_radius'), 0.003 * this.dt );
             // this.shader.setUniformLocationWith1f(this.shader.getUniformLocationForName('u_lightness'), Math.abs(Math.sin(2 * this.dt)));
             this.shader.updateUniforms();
+            if (this.dt >=5){
+                this.sprite.removeFromParent()
+                this.sprite = this.createSprit()
+                this.unschedule(this.run1)
+                this.shader = null
+            }
         }
     },
     graySprite : function (sprite,vertexSrc,grayShaderFragment)
@@ -231,15 +250,14 @@ var HelloWorldLayer = cc.Layer.extend({
             window.ssss = shader
             //shader.addAttribute(cc.UNIFORM_TIME_S, cc.UNIFORM_SINTIME);
 
-
-
             shader.link();
             shader.updateUniforms();
             sprite.setShaderProgram(shader);
-
+            window.SSS = sprite
             this.shader = shader;
         }
     },
+
 
 
 
