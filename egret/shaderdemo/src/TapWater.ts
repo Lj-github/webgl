@@ -32,7 +32,8 @@ class TapWater extends eui.Component{
         this.addEventListener(egret.Event.ENTER_FRAME, () => {
             waterFilter3.uniforms.time += 0.01;
             if (waterFilter3.uniforms.time > 1) {
-                waterFilter3.uniforms.time = 0.0;
+                return
+               // waterFilter3.uniforms.time = 0.0;
             }
         }, this);
         sky.addEventListener(egret.TouchEvent.TOUCH_TAP, (e)=>{
@@ -43,8 +44,6 @@ class TapWater extends eui.Component{
             waterFilter3.uniforms.center.y = y
             console.log("水波起始位置(百分比) ===> x : " +x + " y : " + y )
 
-            //
-            waterFilter3.uniforms.time += 0.2;
             if (waterFilter3.uniforms.time > 1) {
                 waterFilter3.uniforms.time = 0.0;
             }

@@ -10,6 +10,12 @@ uniform vec2 center;       //   uniform 变量就像是C语言里面的常量（
 uniform vec3 params ;       // 10.0, 0.8, 0.1"
 uniform float time;         //
 
+void gea (){
+
+
+}
+
+
 void main()
 {
     vec2 uv = vTextureCoord.xy; // vTextureCoord.xy代表像素在Framebuffer画面的位置，gl_FragCoord.z代表这个店在做Z Buffer测试时所用的Z值

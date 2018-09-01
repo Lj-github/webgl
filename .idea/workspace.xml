@@ -3,11 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="68aafb0f-d936-40ac-9bc9-3a0a869c38f4" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/egret/shaderDemo/bin-debug/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/egret/shaderDemo/bin-debug/Main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/egret/shaderDemo/egretProperties.json" beforeDir="false" afterPath="$PROJECT_DIR$/egret/shaderDemo/egretProperties.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/egret/shaderDemo/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/egret/shaderDemo/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/egret/shaderDemo/resource/default.res.json" beforeDir="false" afterPath="$PROJECT_DIR$/egret/shaderDemo/resource/default.res.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/egret/shaderDemo/src/Main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/egret/shaderDemo/src/Main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/egret/shaderdemo/bin-debug/TapWater.js" beforeDir="false" afterPath="$PROJECT_DIR$/egret/shaderdemo/bin-debug/TapWater.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/egret/shaderdemo/resource/shader/fragmentWather.glsl" beforeDir="false" afterPath="$PROJECT_DIR$/egret/shaderdemo/resource/shader/fragmentWather.glsl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/egret/shaderdemo/resource/shader/vertex.glsl" beforeDir="false" afterPath="$PROJECT_DIR$/egret/shaderdemo/resource/shader/vertex.glsl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/egret/shaderdemo/src/TapWater.ts" beforeDir="false" afterPath="$PROJECT_DIR$/egret/shaderdemo/src/TapWater.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,35 +21,26 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cocos/shaderDemo/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
+            <state relative-caret-position="17">
               <caret line="40" column="12" selection-start-line="40" selection-start-column="12" selection-end-line="40" selection-end-column="12" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TapWater.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TapWater.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/egret/shaderdemo/src/TapWater.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="27" column="47" selection-start-line="27" selection-start-column="47" selection-end-line="27" selection-end-column="47" />
+            <state relative-caret-position="391">
+              <caret line="23" column="41" lean-forward="true" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fragmentWather.glsl" pinned="false" current-in-tab="false">
+      <file leaf-file-name="fragmentWather.glsl" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/egret/shaderdemo/resource/shader/fragmentWather.glsl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="default.res.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/egret/shaderdemo/resource/default.res.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2499">
-              <caret line="147" column="9" lean-forward="true" selection-start-line="147" selection-start-column="9" selection-end-line="147" selection-end-column="9" />
+            <state relative-caret-position="221">
+              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
             </state>
           </provider>
         </entry>
@@ -57,8 +48,17 @@
       <file leaf-file-name="vertex.glsl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/egret/shaderdemo/resource/shader/vertex.glsl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="272">
+              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="default.res.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/egret/shaderdemo/resource/default.res.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="605">
+              <caret line="147" column="9" selection-start-line="147" selection-start-column="9" selection-end-line="147" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -66,7 +66,7 @@
       <file leaf-file-name="Main.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/egret/shaderdemo/src/Main.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6834">
+            <state relative-caret-position="211">
               <caret line="429" column="7" selection-start-line="429" selection-start-column="7" selection-end-line="429" selection-end-column="7" />
             </state>
           </provider>
@@ -75,8 +75,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/egret/shaderdemo/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="25" column="76" lean-forward="true" selection-start-line="25" selection-start-column="76" selection-end-line="25" selection-end-column="76" />
+            <state relative-caret-position="187">
+              <caret line="11" column="49" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
             </state>
           </provider>
         </entry>
@@ -94,19 +94,9 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>render</find>
-      <find>vsSource</find>
-      <find>BiquadFilterType</find>
-      <find>matrix</find>
-      <find>projectionMatrix</find>
-      <find>aVertexPosition</find>
-      <find>setupVideo</find>
-      <find>LinkProgram</find>
       <find>loadShader</find>
       <find>initShaderProgram</find>
       <find>shaderProgram</find>
-      <find>vColor</find>
-      <find>lowp</find>
       <find>video</find>
       <find>aVertexColor</find>
       <find>vertexColor</find>
@@ -124,6 +114,16 @@
       <find>Shader</find>
       <find>gl</find>
       <find>thumb_pb_png</find>
+      <find>center</find>
+      <find>lowplowp</find>
+      <find>lowp</find>
+      <find>attribute</find>
+      <find>glActiveTexture</find>
+      <find>vTextureCoord</find>
+      <find>vColor</find>
+      <find>params</find>
+      <find>gl_Position</find>
+      <find>projectionVector</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -137,7 +137,6 @@
         <option value="$PROJECT_DIR$/webgl-examples-gh-pages/tutorial/sample4/webgl-demo.js" />
         <option value="$PROJECT_DIR$/webgl-examples-gh-pages/tutorial/sample8/webgl-demo.js" />
         <option value="$PROJECT_DIR$/webgl-examples-gh-pages/tutorial/sample2/webgl-demo.js" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/webgl-examples-gh-pages/tutorial/sample3/webgl-demo.js" />
         <option value="$PROJECT_DIR$/cocos/shaderDemo/src/app.js" />
         <option value="$PROJECT_DIR$/egret/shaderDemo/src/Main.ts" />
@@ -145,9 +144,10 @@
         <option value="$PROJECT_DIR$/egret/shaderDemo/egretProperties.json" />
         <option value="$PROJECT_DIR$/egret/shaderdemo/src/Main.ts" />
         <option value="$PROJECT_DIR$/egret/shaderdemo/resource/shader/vertex.vsh.glsl" />
-        <option value="$PROJECT_DIR$/egret/shaderdemo/resource/shader/vertex.glsl" />
-        <option value="$PROJECT_DIR$/egret/shaderdemo/resource/shader/fragmentWather.glsl" />
+        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/egret/shaderdemo/src/TapWater.ts" />
+        <option value="$PROJECT_DIR$/egret/shaderdemo/resource/shader/fragmentWather.glsl" />
+        <option value="$PROJECT_DIR$/egret/shaderdemo/resource/shader/vertex.glsl" />
       </list>
     </option>
   </component>
@@ -158,9 +158,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
+    <option name="x" value="-1894" />
+    <option name="y" value="280" />
     <option name="width" value="1920" />
-    <option name="height" value="979" />
+    <option name="height" value="1052" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -192,12 +193,18 @@
             <path>
               <item name="webgl" type="b2602c69:ProjectViewProjectNode" />
               <item name="webgl" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="egret" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="webgl" type="b2602c69:ProjectViewProjectNode" />
               <item name="webgl" type="462c0819:PsiDirectoryNode" />
-              <item name="webgl-examples-gh-pages" type="462c0819:PsiDirectoryNode" />
+              <item name="egret" type="462c0819:PsiDirectoryNode" />
+              <item name="shaderdemo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webgl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webgl" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -245,16 +252,16 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1920" height="979" extended-state="0" />
+    <frame x="-1894" y="280" width="1920" height="1052" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32939914" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.32945284" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.19790454" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.13948497" />
       <window_info anchor="bottom" id="TypeScript" order="8" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14536741" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
@@ -284,13 +291,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/egret/shaderdemo/src/TapWater.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="30" lean-forward="true" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webgl-examples-gh-pages/tutorial/sample6/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -464,16 +464,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="51">
-            <caret line="3" column="37" lean-forward="true" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webgl-examples-gh-pages/tutorial/sample2/webgl-demo.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1802">
@@ -580,59 +570,72 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/egret/shaderdemo/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="49" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="119">
+            <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/新建文本文档.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/egret/shaderdemo/libs/modules/egret/egret.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="222">
-          <caret line="6085" column="17" selection-start-line="6085" selection-start-column="17" selection-end-line="6085" selection-end-column="17" />
+          <caret line="6104" column="68" selection-start-line="6104" selection-start-column="60" selection-end-line="6104" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/egret/shaderdemo/src/TapWater.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="41" lean-forward="true" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/egret/shaderdemo/resource/shader/vertex.glsl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/egret/shaderdemo/resource/default.res.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="605">
+          <caret line="147" column="9" selection-start-line="147" selection-start-column="9" selection-end-line="147" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cocos/shaderDemo/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
+        <state relative-caret-position="17">
           <caret line="40" column="12" selection-start-line="40" selection-start-column="12" selection-end-line="40" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/egret/shaderdemo/src/Main.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6834">
+        <state relative-caret-position="211">
           <caret line="429" column="7" selection-start-line="429" selection-start-column="7" selection-end-line="429" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/egret/shaderdemo/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="76" lean-forward="true" selection-start-line="25" selection-start-column="76" selection-end-line="25" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/egret/shaderdemo/resource/shader/vertex.glsl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/egret/shaderdemo/resource/default.res.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2499">
-          <caret line="147" column="9" lean-forward="true" selection-start-line="147" selection-start-column="9" selection-end-line="147" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/egret/shaderdemo/resource/shader/fragmentWather.glsl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/egret/shaderdemo/src/TapWater.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="27" column="47" selection-start-line="27" selection-start-column="47" selection-end-line="27" selection-end-column="47" />
+        <state relative-caret-position="221">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
         </state>
       </provider>
     </entry>

@@ -32,19 +32,17 @@ var TapWater = (function (_super) {
         this.addEventListener(egret.Event.ENTER_FRAME, function () {
             waterFilter3.uniforms.time += 0.01;
             if (waterFilter3.uniforms.time > 1) {
-                waterFilter3.uniforms.time = 0.0;
+                return;
+                // waterFilter3.uniforms.time = 0.0;
             }
         }, this);
         sky.addEventListener(egret.TouchEvent.TOUCH_TAP, function (e) {
-            console.log(e);
-            e.stageY;
             var x = Math.abs(e.stageX - sky.x) / sky.width;
-            var y = Math.abs(e.stageY - sky.y) / sky.width;
+            var y = Math.abs(e.stageY - sky.y) / sky.height;
             //修改水纹起始位置
             waterFilter3.uniforms.center.x = x;
             waterFilter3.uniforms.center.y = y;
-            //
-            waterFilter3.uniforms.time += 0.2;
+            console.log("水波起始位置(百分比) ===> x : " + x + " y : " + y);
             if (waterFilter3.uniforms.time > 1) {
                 waterFilter3.uniforms.time = 0.0;
             }
