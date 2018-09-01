@@ -10,7 +10,12 @@ uniform vec2 center;       //   uniform 变量就像是C语言里面的常量（
 uniform vec3 params ;       // 10.0, 0.8, 0.1"
 uniform float time;         //
 
-void gea (){
+uniform float v[10];
+
+
+// 如果有突起  则 直接累加  // 测试 ！！
+void isChange (){
+
 
 
 }
@@ -23,21 +28,44 @@ void main()
 
     float dist = distance(uv, center); // 计算向量 uv ，center 之间的距离
 
-    if ( (dist <= (time + params.z)) && (dist >= (time - params.z)) )
+    for( int a = 0; a < 10; a = a + 1 )
     {
-        float diff = (dist - time);
-        float powDiff = 1.0 - pow(abs(diff*params.x), params.y); // pow  x的y次方。如果x小于0，结果是未定义的。同样，如果x=0并且y<=0,结果也是未定义的。使用时应特别注意。
-                                                                   //abs    返回x的绝对值
+        if (a !=0){
+            continue;
+        }
 
-        float diffTime = diff  * powDiff;
-        vec2 diffUV = normalize(uv - center);  //标准化向量，返回一个方向和x相同但长度为1的向量   相当于 单位向量 模等于1
-        texCoord = uv + (diffUV * diffTime);   //
+        if ( v[a] <= 0.00001){
+            continue;
+        }
+        if ( (dist <= ( time + params.z)) && (dist >= (time- params.z)) )  // 应该是要 突起的部分
+        {
+            float diff = (dist - time);
+            float powDiff = 1.0 - pow(abs(diff*params.x), params.y); // pow  x的y次方。如果x小于0，结果是未定义的。同样，如果x=0并且y<=0,结果也是未定义的。使用时应特别注意。
+                                                                       //abs    返回x的绝对值
+
+            float diffTime = diff  * powDiff;
+            vec2 diffUV = normalize(uv - center);  //标准化向量，返回一个方向和x相同但长度为1的向量   相当于 单位向量 模等于1
+            texCoord = uv + (diffUV * diffTime);   //
+        }
+
+
     }
 
-    gl_FragColor = texture2D(uSampler, texCoord);   // texture2D 返回类型的精度为lowp
+
+//
+//    if ( (dist <= (time + params.z)) && (dist >= (time - params.z)) )  // 应该是要 突起的部分
+//    {
+//        float diff = (dist - time);
+//        float powDiff = 1.0 - pow(abs(diff*params.x), params.y); // pow  x的y次方。如果x小于0，结果是未定义的。同样，如果x=0并且y<=0,结果也是未定义的。使用时应特别注意。
+//                                                                   //abs    返回x的绝对值
+//
+//        float diffTime = diff  * powDiff;
+//        vec2 diffUV = normalize(uv - center);  //标准化向量，返回一个方向和x相同但长度为1的向量   相当于 单位向量 模等于1
+//        texCoord = uv + (diffUV * diffTime);   //
+//    }
+
+    gl_FragColor = texture2D(uSampler, texCoord);   // 	输出的颜色用于随后的像素操作
 }
-
-
 
 
 /***

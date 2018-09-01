@@ -12,10 +12,19 @@ var TapWater = (function (_super) {
     __extends(TapWater, _super);
     function TapWater() {
         var _this = _super.call(this) || this;
+        _this.allTime = function (count) {
+            var ar = [];
+            while (count > 0) {
+                ar.push(0.01);
+                count--;
+            }
+            return ar;
+        }(10);
         _this.initUI();
         return _this;
     }
     TapWater.prototype.initUI = function () {
+        var _this = this;
         //创建可点击的shader 点击水纹
         var vertexSrc = RES.getRes("vertex_glsl");
         console.log(vertexSrc);
@@ -23,18 +32,32 @@ var TapWater = (function (_super) {
         var waterFilter3 = new egret.CustomFilter(vertexSrc, fragmentWater, {
             center: { x: 0.5, y: 0.5 },
             params: { x: 10, y: 0.8, z: 0.1 },
-            time: 0
+            time: 0,
+            v: this.allTime
         });
         var sky = Main.createBitmapByName("bg_jpg");
         sky.touchEnabled = true; // bitmap  必须设置 true  才能点击事件？
         this.addChild(sky);
         sky.filters = [waterFilter3];
         this.addEventListener(egret.Event.ENTER_FRAME, function () {
-            waterFilter3.uniforms.time += 0.01;
-            if (waterFilter3.uniforms.time > 1) {
-                return;
-                // waterFilter3.uniforms.time = 0.0;
+            var canRun = false;
+            for (var i in _this.allTime) {
+                if (_this.allTime[i] > 0) {
+                    canRun = true;
+                    _this.allTime[i] += 0.01;
+                    if (_this.allTime[i] >= 1) {
+                        _this.allTime[i] = 0.0;
+                    }
+                }
             }
+            if (canRun) {
+                waterFilter3.uniforms.v = _this.allTime;
+            }
+            // waterFilter3.uniforms.time += 0.01;
+            // if (waterFilter3.uniforms.time > 1) {
+            //     return
+            //    // waterFilter3.uniforms.time = 0.0;
+            // }
         }, this);
         sky.addEventListener(egret.TouchEvent.TOUCH_TAP, function (e) {
             var x = Math.abs(e.stageX - sky.x) / sky.width;
@@ -43,10 +66,17 @@ var TapWater = (function (_super) {
             waterFilter3.uniforms.center.x = x;
             waterFilter3.uniforms.center.y = y;
             console.log("水波起始位置(百分比) ===> x : " + x + " y : " + y);
-            if (waterFilter3.uniforms.time > 1) {
-                waterFilter3.uniforms.time = 0.0;
-            }
+            //
+            // if (waterFilter3.uniforms.time > 1) {
+            //     waterFilter3.uniforms.time = 0.0;
+            // }
+            //this.allTime.push(0.0001)
+            //this.addNewTime()
         }, this);
+    };
+    TapWater.prototype.addNewTime = function () {
+        this.allTime.unshift(0.0001);
+        this.allTime.pop();
     };
     return TapWater;
 }(eui.Component));
