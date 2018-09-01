@@ -203,7 +203,7 @@ class Main extends egret.DisplayObjectContainer {
         /***************ddd    第二个  *****/
 
 
-        let sky = this.createBitmapByName("bg_jpg");
+        let sky = Main.createBitmapByName("bg_jpg");
         this.addChild(sky);
         let stageW = this.stage.stageWidth;
         let stageH = this.stage.stageHeight;
@@ -269,7 +269,7 @@ class Main extends egret.DisplayObjectContainer {
             "}"
         ].join("\n");
 
-        let fragmentSrc3 = [
+        let fragmentSrc3 = [  //水
             "precision lowp float;\n" +
             "varying vec2 vTextureCoord;",
             "varying vec4 vColor;\n",
@@ -368,9 +368,9 @@ class Main extends egret.DisplayObjectContainer {
         let state = 0;
         this.stage.addEventListener(egret.TouchEvent.TOUCH_TAP, () => {
             state++;
-            if (state > 3) {
-                state = 0;
-            }
+            // if (state > 4) {
+            //     state = 0;
+            // }
 
             if (state === 0) {
                 sky.filters = [customFilter1];
@@ -380,6 +380,9 @@ class Main extends egret.DisplayObjectContainer {
                 sky.filters = [customFilter3];
             } else if (state === 3) {
                 sky.filters = [customFilter4];
+            }else if (state === 4){
+                this.addChild(new TapWater())
+
             }
         }, this)
 
@@ -414,7 +417,7 @@ class Main extends egret.DisplayObjectContainer {
      * 根据name关键字创建一个Bitmap对象。name属性请参考resources/resource.json配置文件的内容。
      * Create a Bitmap object according to name keyword.As for the property of name please refer to the configuration file of resources/resource.json.
      */
-    private createBitmapByName(name: string) {
+    static createBitmapByName(name: string) {
         let result = new egret.Bitmap();
         let texture: egret.Texture = RES.getRes(name);
         result.texture = texture;

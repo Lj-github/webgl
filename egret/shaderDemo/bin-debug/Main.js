@@ -253,8 +253,9 @@ var Main = (function (_super) {
         //     filter.uniforms.width = size / stageW;
         //     filter.uniforms.height = size / stageH;
         // }, this);
+        var _this = this;
         /***************ddd    第二个  *****/
-        var sky = this.createBitmapByName("bg_jpg");
+        var sky = Main.createBitmapByName("bg_jpg");
         this.addChild(sky);
         var stageW = this.stage.stageWidth;
         var stageH = this.stage.stageHeight;
@@ -367,9 +368,9 @@ var Main = (function (_super) {
         var state = 0;
         this.stage.addEventListener(egret.TouchEvent.TOUCH_TAP, function () {
             state++;
-            if (state > 3) {
-                state = 0;
-            }
+            // if (state > 4) {
+            //     state = 0;
+            // }
             if (state === 0) {
                 sky.filters = [customFilter1];
             }
@@ -381,6 +382,9 @@ var Main = (function (_super) {
             }
             else if (state === 3) {
                 sky.filters = [customFilter4];
+            }
+            else if (state === 4) {
+                _this.addChild(new TapWater());
             }
         }, this);
         this.addEventListener(egret.Event.ENTER_FRAME, function () {
@@ -412,7 +416,7 @@ var Main = (function (_super) {
      * 根据name关键字创建一个Bitmap对象。name属性请参考resources/resource.json配置文件的内容。
      * Create a Bitmap object according to name keyword.As for the property of name please refer to the configuration file of resources/resource.json.
      */
-    Main.prototype.createBitmapByName = function (name) {
+    Main.createBitmapByName = function (name) {
         var result = new egret.Bitmap();
         var texture = RES.getRes(name);
         result.texture = texture;
