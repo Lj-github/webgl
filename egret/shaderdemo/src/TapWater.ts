@@ -37,9 +37,6 @@ class TapWater extends eui.Component{
             }
         }, this)
     }
-    onTouch(){
-        console.log("touch")
 
-    }
 
 }

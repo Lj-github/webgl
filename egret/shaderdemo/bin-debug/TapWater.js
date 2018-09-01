@@ -42,9 +42,6 @@ var TapWater = (function (_super) {
             }
         }, this);
     };
-    TapWater.prototype.onTouch = function () {
-        console.log("touch");
-    };
     return TapWater;
 }(eui.Component));
 __reflect(TapWater.prototype, "TapWater");
