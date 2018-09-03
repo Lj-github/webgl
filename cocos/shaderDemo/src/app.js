@@ -209,8 +209,6 @@ var HelloWorldLayer = cc.Layer.extend({
         this.addChild(sprite, 0);
         sprite.setScale(2.5)
         return sprite
-
-
     },
 
 
@@ -247,7 +245,6 @@ var HelloWorldLayer = cc.Layer.extend({
             shader.addAttribute(cc.ATTRIBUTE_NAME_POSITION, cc.VERTEX_ATTRIB_POSITION);
             shader.addAttribute(cc.ATTRIBUTE_NAME_COLOR, cc.VERTEX_ATTRIB_COLOR);
             shader.addAttribute(cc.ATTRIBUTE_NAME_TEX_COORD, cc.VERTEX_ATTRIB_TEX_COORDS);
-            window.ssss = shader
             //shader.addAttribute(cc.UNIFORM_TIME_S, cc.UNIFORM_SINTIME);
 
             shader.link();
@@ -266,7 +263,7 @@ var HelloWorldLayer = cc.Layer.extend({
 var HelloWorldScene = cc.Scene.extend({
     onEnter:function () {
         this._super();
-        var layer = new HelloWorldLayer();
+        var layer = new TapWater();
         this.addChild(layer);
     }
 });

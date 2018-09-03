@@ -1,18 +1,1 @@
-{
-    "project_type": "javascript",
-
-    "debugMode" : 1,
-    "showFPS" : true,
-    "frameRate" : 60,
-    "noCache" : false,
-    "id" : "gameCanvas",
-    "renderMode" : 0,
-    "engineDir":"frameworks/cocos2d-html5",
-
-    "modules" : ["cocos2d"],
-
-    "jsList" : [
-        "src/resource.js",
-        "src/app.js"
-    ]
-}
+{"showFPS": true, "noCache": false, "modules": ["cocos2d"], "frameRate": 60, "jsList": ["src/app.js", "src/resource.js", "src/TapWater.js"], "project_type": "javascript", "debugMode": 1, "engineDir": "frameworks/cocos2d-html5", "renderMode": 0, "id": "gameCanvas"}
