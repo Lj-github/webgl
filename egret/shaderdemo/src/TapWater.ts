@@ -18,6 +18,8 @@ class TapWater extends eui.Component{
         this.initUI()
     }
     private initUI(){
+
+        // todo  egret 貌似对 shader 支持的还不够
         //创建可点击的shader 点击水纹
         let vertexSrc = RES.getRes("vertex_glsl")
         console.log(vertexSrc)
@@ -31,7 +33,7 @@ class TapWater extends eui.Component{
                 center: { x: 0.5, y: 0.5 },
                 params: { x: 10, y: 0.8, z: 0.1 },
                 time: 0,
-                v:this.allTime
+                // v:[0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1]
             }
         );
         let sky = Main.createBitmapByName("bg_jpg");
@@ -54,13 +56,16 @@ class TapWater extends eui.Component{
 
             }
 
-
             // waterFilter3.uniforms.time += 0.01;
             // if (waterFilter3.uniforms.time > 1) {
             //     return
             //    // waterFilter3.uniforms.time = 0.0;
             // }
         }, this);
+        //egret.web.EgretWebGLAttribute()
+
+
+
         sky.addEventListener(egret.TouchEvent.TOUCH_TAP, (e)=>{
             let x = Math.abs(e.stageX - sky.x )/sky.width
             let y = Math.abs(e.stageY - sky.y )/sky.height

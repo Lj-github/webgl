@@ -33,7 +33,6 @@ var TapWater = (function (_super) {
             center: { x: 0.5, y: 0.5 },
             params: { x: 10, y: 0.8, z: 0.1 },
             time: 0,
-            v: this.allTime
         });
         var sky = Main.createBitmapByName("bg_jpg");
         sky.touchEnabled = true; // bitmap  必须设置 true  才能点击事件？
@@ -59,6 +58,7 @@ var TapWater = (function (_super) {
             //    // waterFilter3.uniforms.time = 0.0;
             // }
         }, this);
+        //egret.web.EgretWebGLAttribute()
         sky.addEventListener(egret.TouchEvent.TOUCH_TAP, function (e) {
             var x = Math.abs(e.stageX - sky.x) / sky.width;
             var y = Math.abs(e.stageY - sky.y) / sky.height;
