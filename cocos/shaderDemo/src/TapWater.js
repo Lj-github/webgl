@@ -74,12 +74,11 @@ var TapWater  = cc.Layer.extend({
             shader.addAttribute(cc.ATTRIBUTE_NAME_POSITION, cc.VERTEX_ATTRIB_POSITION);
             shader.addAttribute(cc.ATTRIBUTE_NAME_COLOR, cc.VERTEX_ATTRIB_COLOR);
             shader.addAttribute(cc.ATTRIBUTE_NAME_TEX_COORD, cc.VERTEX_ATTRIB_TEX_COORDS);
-           // shader.addAttribute(cc.ATTR)
+           // shader.addAttribute(cc.UNIFORM_SAMPLER_S,cc.UNIFORM_SAMPLER );
             //shader.addAttribute(cc.UNIFORM_TIME_S, cc.UNIFORM_SINTIME);
             shader.link();
             shader.updateUniforms();
             sprite.setShaderProgram(shader);
-            window.SSS = sprite
             this.shader = shader;
             this.shader.setUniformLocationWith2f(this.shader.getUniformLocationForName('center'), 0.5, 0.5  );
             this.shader.setUniformLocationWith3f(this.shader.getUniformLocationForName('params'),  10, 0.8, 0.1 );
