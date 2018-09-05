@@ -1,4 +1,4 @@
-//precision lowp float;       //顶点着色器中默认精度
+precision lowp float;       //顶点着色器中默认精度
 varying vec2 v_texCoord; //多纹理的时候这个参数代表着纹理的层。
 varying vec4 vColor;            //varying变量是vertex和fragment shader之间做数据传递用的。一般vertex shader修改varying变量的值，
                                 //然后fragment shader使用该varying变量的值。因此varying变量在vertex和fragment shader二者之间的声明必须是一致的。application不能使用此变量。
