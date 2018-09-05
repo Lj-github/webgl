@@ -199,7 +199,6 @@ class Main extends egret.DisplayObjectContainer {
 
 
 
-
         /***************ddd    第二个  *****/
 
 

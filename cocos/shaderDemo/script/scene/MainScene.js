@@ -16,7 +16,7 @@ MainScene.prototype.init = function() {
       this.addChild(node);
       node.setName("layerNode");
       this.createList();
-      layer = new TapWater().get();
+      layer = new LayerWave().get();
       return node.addChild(layer);
     },
     createList: function() {

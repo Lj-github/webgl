@@ -320,6 +320,13 @@ function loadShader(gl, type, source) {
   return shader;
 }
 
+function changeValue(gl) {
+
+   gl.compileShader(shader);
+
+}
+
+
 setInterval(function () {
   const buffers = initBuffers(gl);
   drawScene(gl, programInfo, buffers);

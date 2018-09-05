@@ -8,11 +8,14 @@ import os
 import json
 import sys
 
+isCoffee = True
 
 def GetFileList(dir, fileList):
     newDir = dir
     if os.path.isfile(dir):
-        fileList.append(dir.decode('utf-8'))
+        fpath ,fname =  os.path.split(dir)
+        if fname[0] != "." :
+            fileList.append(dir.decode('utf-8'))
     elif os.path.isdir(dir):
         for s in os.listdir(dir):
             newDir = os.path.join(dir, s)
@@ -30,8 +33,9 @@ try:
 
     # 先生成 js coffee -c -b  -o script/ coffee/
     os.system("coffee -c -b  -o script/ coffee/")
-
-    path = sys.path[0] + "/script"
+    path = sys.path[0] + "/src"
+    if isCoffee:
+        path = sys.path[0] + "/script"
     allJsList = GetFileList(path, [])
     if allJsList:
         with open("project.json", 'r') as f:

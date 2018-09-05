@@ -40,8 +40,7 @@ LayerWave::init = ->
 
       fsh = "\n" +
         "varying vec2 v_texCoord \n" +
-         "uniform float u_radius \n"+
-
+        "uniform float u_radius \n"+
         "void main()\n" +
         "\n{\n" +
         "   float radius = u_radius \n"+
@@ -51,7 +50,7 @@ LayerWave::init = ->
         "   gl_FragColor = texture2D(CC_Texture0, coord) \n" +
         "}"
       this.graySprite(this.sprite,vsh,fsh)
-      this.schedule(this.run1,0.1) 
+      this.schedule(@run1,0.1)
 
       return true 
 

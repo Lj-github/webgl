@@ -13,7 +13,7 @@ MainScene::init = ->
       @addChild(node)
       node.setName("layerNode")
       this.createList()
-      layer = new TapWater().get()
+      layer = new LayerWave().get()
       node.addChild(layer)  
 
     createList:->
