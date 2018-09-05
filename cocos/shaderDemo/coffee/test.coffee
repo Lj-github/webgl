@@ -3,9 +3,6 @@
 ##  var ds = new test().get()  获取类 cocos 类  如果是 自己写的类  可以直接使用 coffee 的 :: 形式  或者全部都这样
 
 test = ->
-  @$id = 'test'
-  @$init = 'init'
-  @ctor = null
   return
 test::init = ->
   @ctor = cc.Layer.extend(
