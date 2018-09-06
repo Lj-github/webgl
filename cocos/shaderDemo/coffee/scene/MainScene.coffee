@@ -8,12 +8,13 @@ MainScene::init = ->
       @dataList = []
 
     onEnter : ->
+      @_super()
       console.log "enter == > " + "MainScene"
       node = new cc.Node()
       @addChild(node)
       node.setName("layerNode")
       this.createList()
-      layer = new LayerWave().get()
+      layer = new TapWater().get()
       node.addChild(layer)  
 
     createList:->

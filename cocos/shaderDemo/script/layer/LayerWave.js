@@ -4,13 +4,15 @@ var LayerWave;
 LayerWave = function() {};
 
 LayerWave.prototype.init = function() {
+  var self;
+  self = this;
   this.ctor = cc.Layer.extend({
     sprite: null,
     time: 0,
     dt: 0,
     shader: null,
     ctor: function(params) {
-      var fsh, helloLabel, size, vsh;
+      var helloLabel, size;
       this._super();
       size = cc.winSize;
       helloLabel = new cc.LabelTTF("Hello World", "Arial", 38);
@@ -22,22 +24,25 @@ LayerWave.prototype.init = function() {
         y: size.height / 2
       });
       this.addChild(this.sprite, 0);
-      this.sprite.setScale(2.5);
-      vsh = "\n" + "attribute vec4 a_position \n" +
-          "attribute vec2 a_texCoord \n" +
-          "attribute vec4 a_color \n" +
-          "varying vec4 v_fragmentColor \n" +
-          "varying vec2 v_texCoord \n" +
-          "void main()\n" +
-          "\n{\n" +
-          "   gl_Position = CC_PMatrix * a_position \n"
-          + "   v_fragmentColor = a_color \n" +
-          "   v_texCoord = a_texCoord \n" +
-          "}";
-      fsh = "\n" + "varying vec2 v_texCoord \n" + "uniform float u_radius \n" + "void main()\n" + "\n{\n" + "   float radius = u_radius \n" + "   vec2 coord = v_texCoord \n" + "   coord.x += (sin(coord.y * 8.0 * 3.1415926 + radius*3.1415926 *1000.0) / 30.0  )    \n" + "   vec2 uvs = coord.xy \n" + "   gl_FragColor = texture2D(CC_Texture0, coord) \n" + "}";
+      return this.sprite.setScale(2.5);
+    },
+    onEnter: function() {
+      var fsh, vsh;
+      this._super();
+      vsh = "\n" + "attribute vec4 a_position;\n" + "attribute vec2 a_texCoord;\n" + "attribute vec4 a_color;\n" + "varying vec4 v_fragmentColor;\n" + "varying vec2 v_texCoord;\n" + "void main()\n" + "\n{\n" + "   gl_Position = CC_PMatrix * a_position;\n" + "   v_fragmentColor = a_color;\n" + "   v_texCoord = a_texCoord;\n" + "}";
+      fsh = "\n" + "varying vec2 v_texCoord;\n" + "uniform float u_radius;\n" + "void main()\n" + "\n{\n" + "   float radius = u_radius;\n" + "   vec2 coord = v_texCoord;\n" + "   coord.x += (sin(coord.y * 8.0 * 3.1415926 + radius*3.1415926 *1000.0) / 30.0  )   ;\n" + "   vec2 uvs = coord.xy;\n" + "   gl_FragColor = texture2D(CC_Texture0, coord);\n" + "}";
       this.graySprite(this.sprite, vsh, fsh);
       this.schedule(this.run1, 0.1);
-      return true;
+      return console.log(5);
+    },
+    update: function(dt) {
+      this.dt += dt;
+      if (this.sprite) {
+        this.time += dt;
+        this.shader.use();
+        this.shader.setUniformLocationWith1f(this.shader.getUniformLocationForName('u_radius'), 0.003 * this.dt);
+        return this.shader.updateUniforms();
+      }
     },
     createSprit: function() {
       var sprite;
@@ -55,14 +60,7 @@ LayerWave.prototype.init = function() {
         this.time += delta;
         this.shader.use();
         this.shader.setUniformLocationWith1f(this.shader.getUniformLocationForName('u_radius'), 0.003 * this.dt);
-        this.shader.updateUniforms();
-        if (this.dt >= 5) {
-          this.sprite.removeFromParent();
-          this.sprite = this.createSprit();
-          this.addChild(this.sprite);
-          this.unschedule(this.run1);
-          return this.shader = null;
-        }
+        return this.shader.updateUniforms();
       }
     },
     graySprite: function(sprite, vertexSrc, grayShaderFragment) {
@@ -80,8 +78,9 @@ LayerWave.prototype.init = function() {
         return this.shader = shader;
       }
     },
-    onEnter: function() {
-      return console.log(5);
+    cleanup: function() {
+      this._super();
+      return this.unscheduleAllCallbacks();
     }
   });
 };

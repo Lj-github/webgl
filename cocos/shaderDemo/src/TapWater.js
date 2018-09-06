@@ -45,7 +45,6 @@ var TapWater  = cc.Layer.extend({
        // if(this.dt>3.14){this.dt-= 3.14;}
         if (this.sprite){
             this.shader.use();
-            var dd = 0.003 *(Math.cos(this.dt))
             this.time += 0.01;
             if (this.time >1){ this.time = 0.0 }
             this.shader.setUniformLocationWith1f(this.shader.getUniformLocationForName("time"),this.time)

@@ -9,7 +9,7 @@ TapWater.prototype.init = function() {
     time: 0,
     dt: 0,
     ctor: function(params) {
-      var _that, helloLabel, size;
+      var helloLabel, size;
       this._super();
       size = cc.winSize;
       helloLabel = new cc.LabelTTF("Hello World", "Arial", 38);
@@ -21,14 +21,18 @@ TapWater.prototype.init = function() {
         y: size.height / 2
       });
       this.addChild(this.sprite, 0);
-      this.sprite.setScale(2.5);
+      return this.sprite.setScale(2.5);
+    },
+    onEnter: function() {
+      var _that;
+      this._super();
       _that = this;
       cc.loader.loadTxt(res.fragmentWather, function(x, fragmentWather) {
         return cc.loader.loadTxt(res.vertex, function(x, vertex) {
           return _that.initShader(vertex, fragmentWather);
         });
       });
-      return true;
+      return console.log(5);
     },
     initShader: function(v, f) {
       this.graySprite(this.sprite, v, f);
@@ -51,6 +55,7 @@ TapWater.prototype.init = function() {
         if (this.time > 1) {
           this.time = 0.0;
         }
+        this.time += 0.01;
         this.shader.setUniformLocationWith1f(this.shader.getUniformLocationForName("time"), this.time);
         return this.shader.updateUniforms();
       }
@@ -72,8 +77,9 @@ TapWater.prototype.init = function() {
         return this.shader.setUniformLocationWith3f(this.shader.getUniformLocationForName('params'), 10, 0.8, 0.1);
       }
     },
-    onEnter: function() {
-      return console.log(5);
+    cleanup: function() {
+      this._super();
+      return this.unscheduleAllCallbacks();
     }
   });
 };

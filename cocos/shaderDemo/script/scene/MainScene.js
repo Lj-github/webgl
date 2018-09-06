@@ -11,12 +11,13 @@ MainScene.prototype.init = function() {
     },
     onEnter: function() {
       var layer, node;
+      this._super();
       console.log("enter == > " + "MainScene");
       node = new cc.Node();
       this.addChild(node);
       node.setName("layerNode");
       this.createList();
-      layer = new LayerWave().get();
+      layer = new TapWater().get();
       return node.addChild(layer);
     },
     createList: function() {

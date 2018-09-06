@@ -1,10 +1,12 @@
 # @Time    : 2018/9/5 下午7:14
 # 曲线效果
 
+## 在ctor  onenter cleaup 等 都要写 @_super() 不管是 layer  scene node  都一样
 
 LayerWave = ->
   return
 LayerWave::init = ->
+  self = this
   @ctor = cc.Layer.extend(
     sprite:null
     time : 0
@@ -23,36 +25,49 @@ LayerWave::init = ->
       })
       this.addChild(@sprite, 0)
       this.sprite.setScale(2.5)
+
+    onEnter : ->
+      @_super()
       vsh = "\n" +
-        "attribute vec4 a_position \n" +
-        "attribute vec2 a_texCoord \n" +
-        "attribute vec4 a_color \n" +
-        "varying vec4 v_fragmentColor \n" +
-        "varying vec2 v_texCoord \n" +
-        "void main()\n" +
-        "\n{\n" +
-        "   gl_Position = CC_PMatrix * a_position \n" +
-        "   v_fragmentColor = a_color \n" +
-        "   v_texCoord = a_texCoord \n" +
-        "}"
-      #TexCoords的值是（0,0）到（1,1）
+          "attribute vec4 a_position;\n" +
+          "attribute vec2 a_texCoord;\n" +
+          "attribute vec4 a_color;\n" +
+          "varying vec4 v_fragmentColor;\n" +
+          "varying vec2 v_texCoord;\n" +
+          "void main()\n" +
+          "\n{\n" +
+          "   gl_Position = CC_PMatrix * a_position;\n" +
+          "   v_fragmentColor = a_color;\n" +
+          "   v_texCoord = a_texCoord;\n" +
+          "}"
+
 
 
       fsh = "\n" +
-        "varying vec2 v_texCoord \n" +
-        "uniform float u_radius \n"+
-        "void main()\n" +
-        "\n{\n" +
-        "   float radius = u_radius \n"+
-        "   vec2 coord = v_texCoord \n" +
-        "   coord.x += (sin(coord.y * 8.0 * 3.1415926 + radius*3.1415926 *1000.0) / 30.0  )    \n" +
-        "   vec2 uvs = coord.xy \n" +
-        "   gl_FragColor = texture2D(CC_Texture0, coord) \n" +
-        "}"
-      this.graySprite(this.sprite,vsh,fsh)
-      this.schedule(@run1,0.1)
+          "varying vec2 v_texCoord;\n" +
+           "uniform float u_radius;\n"+
 
-      return true 
+          "void main()\n" +
+          "\n{\n" +
+          "   float radius = u_radius;\n"+
+          "   vec2 coord = v_texCoord;\n" +
+          "   coord.x += (sin(coord.y * 8.0 * 3.1415926 + radius*3.1415926 *1000.0) / 30.0  )   ;\n" +
+          "   vec2 uvs = coord.xy;\n" +
+          "   gl_FragColor = texture2D(CC_Texture0, coord);\n" +
+          "}"
+      @graySprite(this.sprite,vsh,fsh)
+      @schedule(@run1,0.1)
+
+      console.log(5)
+    update:(dt)->
+      @dt += dt
+      if this.sprite
+        this.time += dt
+        this.shader.use()
+        this.shader.setUniformLocationWith1f(this.shader.getUniformLocationForName('u_radius'), 0.003 * this.dt )
+        this.shader.updateUniforms()
+
+
 
     createSprit:()->
       sprite = new cc.Sprite(res.HelloWorld_png) 
@@ -69,14 +84,14 @@ LayerWave::init = ->
       if this.sprite
         this.time += delta 
         this.shader.use() 
-        this.shader.setUniformLocationWith1f(this.shader.getUniformLocationForName('u_radius'), 0.003 * this.dt ) 
+        this.shader.setUniformLocationWith1f(this.shader.getUniformLocationForName('u_radius'), 0.003 * this.dt )
         this.shader.updateUniforms() 
-        if this.dt >=5
-          this.sprite.removeFromParent()
-          this.sprite = this.createSprit()
-          @addChild(this.sprite)
-          this.unschedule(this.run1)
-          this.shader = null
+#        if this.dt >=5
+#          this.sprite.removeFromParent()
+#          this.sprite = this.createSprit()
+#          @addChild(this.sprite)
+#          this.unschedule(this.run1)
+#          this.shader = null
     graySprite :(sprite,vertexSrc,grayShaderFragment)->
       if sprite
         shader = new cc.GLProgram()#cc.GLProgram.create("gray.vsh", "gray.fsh") 
@@ -89,9 +104,11 @@ LayerWave::init = ->
         shader.updateUniforms()
         sprite.setShaderProgram(shader)
         this.shader = shader
-    onEnter : ->
-      console.log(5)
+    cleanup:->
+      @_super()
+      @unscheduleAllCallbacks()
   )
+
   return
 LayerWave::get = (cb, cbTarget, params) ->
   @init()
