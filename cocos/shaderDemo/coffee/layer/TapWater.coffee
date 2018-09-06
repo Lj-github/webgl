@@ -2,6 +2,7 @@
 #  水纹效果
 
 TapWater = ->
+  $id = "TapWater"
   return
 TapWater::init = ->
   @ctor = cc.Layer.extend(
@@ -30,6 +31,36 @@ TapWater::init = ->
         cc.loader.loadTxt(res.vertex, (x,vertex)->
           _that.initShader(vertex,fragmentWather)))
       console.log(5)
+
+      _this = @
+      @_listener_base = cc.EventListener.create(
+            event: cc.EventListener.TOUCH_ONE_BY_ONE
+            swallowTouches: false
+            onTouchBegan: (selTouch, event)->
+              return _this.onTouchBegan(selTouch, event)
+            onTouchMoved: (selTouch, event)->
+              return _this.onTouchMoved(selTouch, event)
+            onTouchEnded: (selTouch, event)->
+              return _this.onTouchEnded(selTouch, event)
+            onTouchCancelled: (selTouch, event)->
+              return _this.onTouchCancelled(selTouch, event)
+        )
+      @_listener_base._setFixedPriority(1)
+      cc.eventManager.addListener(@_listener_base, @)
+    onTouchBegan: ->
+      console.log("onTouchBegan", @__classId)
+      return true
+
+    onTouchMoved: ->
+      return true
+
+    onTouchEnded: ->
+      console.log("onTouchEnded", @__classId)
+      return true
+
+    onTouchCancelled: ->
+      return true
+
     initShader:(v,f) ->
       @graySprite(@sprite,v,f)
       @schedule(@run1,1/60)

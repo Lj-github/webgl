@@ -24,7 +24,7 @@ TapWater.prototype.init = function() {
       return this.sprite.setScale(2.5);
     },
     onEnter: function() {
-      var _that;
+      var _that, _this;
       this._super();
       _that = this;
       cc.loader.loadTxt(res.fragmentWather, function(x, fragmentWather) {
@@ -32,7 +32,40 @@ TapWater.prototype.init = function() {
           return _that.initShader(vertex, fragmentWather);
         });
       });
-      return console.log(5);
+      console.log(5);
+      _this = this;
+      this._listener_base = cc.EventListener.create({
+        event: cc.EventListener.TOUCH_ONE_BY_ONE,
+        swallowTouches: false,
+        onTouchBegan: function(selTouch, event) {
+          return _this.onTouchBegan(selTouch, event);
+        },
+        onTouchMoved: function(selTouch, event) {
+          return _this.onTouchMoved(selTouch, event);
+        },
+        onTouchEnded: function(selTouch, event) {
+          return _this.onTouchEnded(selTouch, event);
+        },
+        onTouchCancelled: function(selTouch, event) {
+          return _this.onTouchCancelled(selTouch, event);
+        }
+      });
+      this._listener_base._setFixedPriority(1);
+      return cc.eventManager.addListener(this._listener_base, this);
+    },
+    onTouchBegan: function() {
+      console.log("onTouchBegan", this.__classId);
+      return true;
+    },
+    onTouchMoved: function() {
+      return true;
+    },
+    onTouchEnded: function() {
+      console.log("onTouchEnded", this.__classId);
+      return true;
+    },
+    onTouchCancelled: function() {
+      return true;
     },
     initShader: function(v, f) {
       this.graySprite(this.sprite, v, f);

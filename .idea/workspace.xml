@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="68aafb0f-d936-40ac-9bc9-3a0a869c38f4" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cocos/shaderDemo/coffee/layer/LayerWave.coffee" beforeDir="false" afterPath="$PROJECT_DIR$/cocos/shaderDemo/coffee/layer/LayerWave.coffee" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cocos/shaderDemo/coffee/layer/TapWater.coffee" beforeDir="false" afterPath="$PROJECT_DIR$/cocos/shaderDemo/coffee/layer/TapWater.coffee" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cocos/shaderDemo/coffee/scene/MainScene.coffee" beforeDir="false" afterPath="$PROJECT_DIR$/cocos/shaderDemo/coffee/scene/MainScene.coffee" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cocos/shaderDemo/script/layer/LayerWave.js" beforeDir="false" afterPath="$PROJECT_DIR$/cocos/shaderDemo/script/layer/LayerWave.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cocos/shaderDemo/script/layer/TapWater.js" beforeDir="false" afterPath="$PROJECT_DIR$/cocos/shaderDemo/script/layer/TapWater.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cocos/shaderDemo/script/scene/MainScene.js" beforeDir="false" afterPath="$PROJECT_DIR$/cocos/shaderDemo/script/scene/MainScene.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cocos/shaderDemo/src/TapWater.js" beforeDir="false" afterPath="$PROJECT_DIR$/cocos/shaderDemo/src/TapWater.js" afterDir="false" />
-    </list>
+    <list default="true" id="68aafb0f-d936-40ac-9bc9-3a0a869c38f4" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,7 +11,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/webgl$MakeFileList.coverage" NAME="MakeFileList Coverage Results" MODIFIED="1536131945409" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cocos/shaderDemo" />
-    <SUITE FILE_PATH="coverage/webgl$buildScript.coverage" NAME="buildScript Coverage Results" MODIFIED="1536208639145" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cocos/shaderDemo" />
+    <SUITE FILE_PATH="coverage/webgl$buildScript.coverage" NAME="buildScript Coverage Results" MODIFIED="1536213508463" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cocos/shaderDemo" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -80,17 +71,17 @@
       <file leaf-file-name="TapWater.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cocos/shaderDemo/src/TapWater.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="61" column="9" lean-forward="true" selection-start-line="43" selection-start-column="6" selection-end-line="61" selection-end-column="9" />
+            <state relative-caret-position="453">
+              <caret line="61" column="9" lean-forward="true" selection-start-line="45" selection-start-column="8" selection-end-line="61" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TapWater.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TapWater.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cocos/shaderDemo/script/layer/TapWater.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="424">
-              <caret line="58" column="7" lean-forward="true" selection-start-line="50" selection-start-column="6" selection-end-line="58" selection-end-column="7" />
+            <state relative-caret-position="308">
+              <caret line="61" selection-start-line="61" selection-end-line="61" />
             </state>
           </provider>
         </entry>
@@ -104,11 +95,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TapWater.coffee" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TapWater.coffee" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cocos/shaderDemo/coffee/layer/TapWater.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="116">
-              <caret line="21" column="31" lean-forward="true" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
+            <state relative-caret-position="149">
+              <caret line="51" column="35" lean-forward="true" selection-start-line="51" selection-start-column="35" selection-end-line="51" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -209,8 +200,8 @@
         <option value="$PROJECT_DIR$/cocos/shaderDemo/coffee/scene/MainScene.coffee" />
         <option value="$PROJECT_DIR$/cocos/shaderDemo/coffee/layer/LayerWave.coffee" />
         <option value="$PROJECT_DIR$/cocos/shaderDemo/src/TapWater.js" />
-        <option value="$PROJECT_DIR$/cocos/shaderDemo/coffee/layer/TapWater.coffee" />
         <option value="$PROJECT_DIR$/cocos/shaderDemo/script/layer/TapWater.js" />
+        <option value="$PROJECT_DIR$/cocos/shaderDemo/coffee/layer/TapWater.coffee" />
       </list>
     </option>
   </component>
@@ -481,7 +472,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1920" y="78" width="1920" height="967" extended-state="0" />
+    <frame x="-1920" y="78" width="1920" height="967" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3287841" />
@@ -489,8 +480,8 @@
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.3287841" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32945284" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.18772137" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32349467" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.18772137" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32349467" />
       <window_info anchor="bottom" id="TypeScript" order="13" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15495208" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
@@ -813,13 +804,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cocos/shaderDemo/coffee/scene/MainScene.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="26" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cocos/shaderDemo/coffee/layer/LayerWave.coffee">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1110">
@@ -827,24 +811,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cocos/shaderDemo/coffee/layer/TapWater.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="21" column="31" lean-forward="true" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cocos/shaderDemo/src/TapWater.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="61" column="9" lean-forward="true" selection-start-line="43" selection-start-column="6" selection-end-line="61" selection-end-column="9" />
+        <state relative-caret-position="453">
+          <caret line="61" column="9" lean-forward="true" selection-start-line="45" selection-start-column="8" selection-end-line="61" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cocos/shaderDemo/script/layer/TapWater.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="58" column="7" lean-forward="true" selection-start-line="50" selection-start-column="6" selection-end-line="58" selection-end-column="7" />
+        <state relative-caret-position="308">
+          <caret line="61" selection-start-line="61" selection-end-line="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cocos/shaderDemo/coffee/scene/MainScene.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="26" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cocos/shaderDemo/coffee/layer/TapWater.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="51" column="35" lean-forward="true" selection-start-line="51" selection-start-column="35" selection-end-line="51" selection-end-column="35" />
         </state>
       </provider>
     </entry>

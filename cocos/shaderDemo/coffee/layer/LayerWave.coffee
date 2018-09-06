@@ -57,6 +57,35 @@ LayerWave::init = ->
           "}"
       @graySprite(this.sprite,vsh,fsh)
       @schedule(@run1,0.1)
+      @_listener_base = cc.EventListener.create(
+          event: cc.EventListener.TOUCH_ONE_BY_ONE
+          swallowTouches: false
+          onTouchBegan: (selTouch, event)->
+            return _this.onTouchBegan(selTouch, event)
+          onTouchMoved: (selTouch, event)->
+            return _this.onTouchMoved(selTouch, event)
+          onTouchEnded: (selTouch, event)->
+            return _this.onTouchEnded(selTouch, event)
+          onTouchCancelled: (selTouch, event)->
+            return _this.onTouchCancelled(selTouch, event)
+      )
+      @_listener_base._setFixedPriority(1)
+      cc.eventManager.addListener(@_listener_base, @)
+
+
+    onTouchBegan: ->
+      console.log("onTouchBegan", @__classId)
+      return true
+
+    onTouchMoved: ->
+      return true
+
+    onTouchEnded: ->
+      console.log("onTouchEnded", @__classId)
+      return true
+
+    onTouchCancelled: ->
+      return true
 
       console.log(5)
     update:(dt)->

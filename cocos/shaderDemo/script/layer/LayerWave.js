@@ -33,6 +33,38 @@ LayerWave.prototype.init = function() {
       fsh = "\n" + "varying vec2 v_texCoord;\n" + "uniform float u_radius;\n" + "void main()\n" + "\n{\n" + "   float radius = u_radius;\n" + "   vec2 coord = v_texCoord;\n" + "   coord.x += (sin(coord.y * 8.0 * 3.1415926 + radius*3.1415926 *1000.0) / 30.0  )   ;\n" + "   vec2 uvs = coord.xy;\n" + "   gl_FragColor = texture2D(CC_Texture0, coord);\n" + "}";
       this.graySprite(this.sprite, vsh, fsh);
       this.schedule(this.run1, 0.1);
+      this._listener_base = cc.EventListener.create({
+        event: cc.EventListener.TOUCH_ONE_BY_ONE,
+        swallowTouches: false,
+        onTouchBegan: function(selTouch, event) {
+          return _this.onTouchBegan(selTouch, event);
+        },
+        onTouchMoved: function(selTouch, event) {
+          return _this.onTouchMoved(selTouch, event);
+        },
+        onTouchEnded: function(selTouch, event) {
+          return _this.onTouchEnded(selTouch, event);
+        },
+        onTouchCancelled: function(selTouch, event) {
+          return _this.onTouchCancelled(selTouch, event);
+        }
+      });
+      this._listener_base._setFixedPriority(1);
+      return cc.eventManager.addListener(this._listener_base, this);
+    },
+    onTouchBegan: function() {
+      console.log("onTouchBegan", this.__classId);
+      return true;
+    },
+    onTouchMoved: function() {
+      return true;
+    },
+    onTouchEnded: function() {
+      console.log("onTouchEnded", this.__classId);
+      return true;
+    },
+    onTouchCancelled: function() {
+      return true;
       return console.log(5);
     },
     update: function(dt) {
