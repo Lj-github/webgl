@@ -47,9 +47,21 @@ TapWater::init = ->
         )
       @_listener_base._setFixedPriority(1)
       cc.eventManager.addListener(@_listener_base, @)
-    onTouchBegan: ->
+    onTouchBegan:(selTouch, event) ->
       console.log("onTouchBegan", @__classId)
+      pos = selTouch.getLocation()
+      target = event._currentTarget.sprite
+      if cc.rectContainsPoint(target.getBoundingBox(),pos)
+        @changeShaderCenter(pos)
+
+
+
       return true
+    changeShaderCenter:(pos)->
+      x = Math.abs( pos.x- @sprite.x)/@sprite.width
+      y = Math.abs( pos.y- @sprite.y)/@sprite.height
+      @shader.setUniformLocationWith2f(@shader.getUniformLocationForName('center'), x, y  );
+
 
     onTouchMoved: ->
       return true

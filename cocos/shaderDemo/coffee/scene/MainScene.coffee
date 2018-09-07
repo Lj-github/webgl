@@ -26,7 +26,7 @@ MainScene::init = ->
         x: size.width / 2,
         y: size.height / 2
       })  
-      node.addChild(sprite, 0)  
+      #node.addChild(sprite, 0)
       tableView  = new cc.TableView(this,cc.size(200,cc.winSize.height))
       tableView.setDirection(cc.SCROLLVIEW_DIRECTION_VERTICAL)
       tableView.x = 0
