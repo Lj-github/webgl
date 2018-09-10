@@ -27,12 +27,13 @@ LayerWave.prototype.init = function() {
       return this.sprite.setScale(2.5);
     },
     onEnter: function() {
-      var fsh, vsh;
+      var _this, fsh, vsh;
       this._super();
       vsh = "\n" + "attribute vec4 a_position;\n" + "attribute vec2 a_texCoord;\n" + "attribute vec4 a_color;\n" + "varying vec4 v_fragmentColor;\n" + "varying vec2 v_texCoord;\n" + "void main()\n" + "\n{\n" + "   gl_Position = CC_PMatrix * a_position;\n" + "   v_fragmentColor = a_color;\n" + "   v_texCoord = a_texCoord;\n" + "}";
       fsh = "\n" + "varying vec2 v_texCoord;\n" + "uniform float u_radius;\n" + "void main()\n" + "\n{\n" + "   float radius = u_radius;\n" + "   vec2 coord = v_texCoord;\n" + "   coord.x += (sin(coord.y * 8.0 * 3.1415926 + radius*3.1415926 *1000.0) / 30.0  )   ;\n" + "   vec2 uvs = coord.xy;\n" + "   gl_FragColor = texture2D(CC_Texture0, coord);\n" + "}";
       this.graySprite(this.sprite, vsh, fsh);
       this.schedule(this.run1, 0.1);
+      _this = this;
       this._listener_base = cc.EventListener.create({
         event: cc.EventListener.TOUCH_ONE_BY_ONE,
         swallowTouches: false,
@@ -112,6 +113,7 @@ LayerWave.prototype.init = function() {
     },
     cleanup: function() {
       this._super();
+      this._listener_base = void 0;
       return this.unscheduleAllCallbacks();
     }
   });

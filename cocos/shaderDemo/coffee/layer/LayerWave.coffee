@@ -57,6 +57,7 @@ LayerWave::init = ->
           "}"
       @graySprite(this.sprite,vsh,fsh)
       @schedule(@run1,0.1)
+      _this = @
       @_listener_base = cc.EventListener.create(
           event: cc.EventListener.TOUCH_ONE_BY_ONE
           swallowTouches: false
@@ -135,6 +136,7 @@ LayerWave::init = ->
         this.shader = shader
     cleanup:->
       @_super()
+      @_listener_base = undefined
       @unscheduleAllCallbacks()
   )
 
