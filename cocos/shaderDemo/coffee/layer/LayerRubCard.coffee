@@ -3,10 +3,10 @@
 
 # 实现 扑克搓牌效果
 
-TapWater = ->
-  $id = "TapWater"
+LayerRubCard = ->
+  $id = "LayerRubCard"
   return
-TapWater::init = ->
+LayerRubCard::init = ->
   @ctor = cc.Layer.extend(
     sprite:null
     time : 0
@@ -26,8 +26,8 @@ TapWater::init = ->
     onEnter : ->
       @_super()
       _that = @
-      cc.loader.loadTxt(res.fragmentWather,(x,fragmentWather)->
-        cc.loader.loadTxt(res.vertex, (x,vertex)->
+      cc.loader.loadTxt("res/shader/rubcard/fragentcard.glsl",(x,fragmentWather)->
+        cc.loader.loadTxt("res/shader/rubcard/vertexcard.glsl", (x,vertex)->
           _that.initShader(vertex,fragmentWather)))
       console.log(5)
 
@@ -119,6 +119,6 @@ TapWater::init = ->
       @unscheduleAllCallbacks()
   )
   return
-TapWater::get = (cb, cbTarget, params) ->
+LayerRubCard::get = (cb, cbTarget, params) ->
   @init()
   return new @ctor(params)

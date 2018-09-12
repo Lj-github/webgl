@@ -3,6 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="68aafb0f-d936-40ac-9bc9-3a0a869c38f4" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cocos/shaderDemo/coffee/layer/LayerRubCard.coffee" beforeDir="false" afterPath="$PROJECT_DIR$/cocos/shaderDemo/coffee/layer/LayerRubCard.coffee" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cocos/shaderDemo/coffee/scene/MainScene.coffee" beforeDir="false" afterPath="$PROJECT_DIR$/cocos/shaderDemo/coffee/scene/MainScene.coffee" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cocos/shaderDemo/coffee/unit/Resource.coffee" beforeDir="false" afterPath="$PROJECT_DIR$/cocos/shaderDemo/coffee/unit/Resource.coffee" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cocos/shaderDemo/project.json" beforeDir="false" afterPath="$PROJECT_DIR$/cocos/shaderDemo/project.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cocos/shaderDemo/script/scene/MainScene.js" beforeDir="false" afterPath="$PROJECT_DIR$/cocos/shaderDemo/script/scene/MainScene.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cocos/shaderDemo/script/unit/Resource.js" beforeDir="false" afterPath="$PROJECT_DIR$/cocos/shaderDemo/script/unit/Resource.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -13,7 +19,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/webgl$MakeFileList.coverage" NAME="MakeFileList Coverage Results" MODIFIED="1536131945409" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cocos/shaderDemo" />
-    <SUITE FILE_PATH="coverage/webgl$buildScript.coverage" NAME="buildScript Coverage Results" MODIFIED="1536545612402" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cocos/shaderDemo" />
+    <SUITE FILE_PATH="coverage/webgl$buildScript.coverage" NAME="buildScript Coverage Results" MODIFIED="1536720573529" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cocos/shaderDemo" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -31,41 +37,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="buildScript.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cocos/shaderDemo/buildScript.py">
+      <file leaf-file-name="LayerRubCard.coffee" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cocos/shaderDemo/coffee/layer/LayerRubCard.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+            <state relative-caret-position="310">
+              <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AssetAdapter.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/egret/shaderdemo/src/AssetAdapter.ts">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cocos/shaderDemo/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="41" column="9" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoadingUI.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/egret/shaderdemo/src/LoadingUI.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="10" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LayerWave.coffee" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cocos/shaderDemo/coffee/layer/LayerWave.coffee">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-608">
-              <caret line="26" column="31" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
+            <state relative-caret-position="352">
+              <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
             </state>
           </provider>
         </entry>
@@ -73,53 +58,44 @@
       <file leaf-file-name="MainScene.coffee" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cocos/shaderDemo/coffee/scene/MainScene.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-581">
-              <caret line="18" selection-start-line="18" selection-end-line="18" />
+            <state relative-caret-position="254">
+              <caret line="38" column="28" lean-forward="true" selection-start-line="38" selection-start-column="28" selection-end-line="38" selection-end-column="28" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LayerRubCard.coffee" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cocos/shaderDemo/coffee/layer/LayerRubCard.coffee">
+      <file leaf-file-name="Resource.coffee" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cocos/shaderDemo/coffee/unit/Resource.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="388">
-              <caret line="28" column="36" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
+            <state relative-caret-position="85">
+              <caret line="5" column="53" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="53" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="resource.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/cocos/shaderDemo/src/resource.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="App.coffee" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cocos/shaderDemo/coffee/App.coffee">
+      <file leaf-file-name="fragentcard.glsl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cocos/shaderDemo/res/shader/rubcard/fragentcard.glsl">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
-              <caret line="8" column="30" lean-forward="true" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
+              <caret line="8" column="63" selection-start-line="8" selection-start-column="63" selection-end-line="8" selection-end-column="63" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test.coffee" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cocos/shaderDemo/coffee/test.coffee">
+      <file leaf-file-name="vertexcard.glsl" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/cocos/shaderDemo/res/shader/rubcard/vertexcard.glsl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="29" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="29" />
+            <state relative-caret-position="153">
+              <caret line="9" column="36" lean-forward="true" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TapWater.coffee" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cocos/shaderDemo/coffee/layer/TapWater.coffee">
+      <file leaf-file-name="vertex.vsh" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cocos/shaderDemo/res/shader/vertex.vsh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="63" lean-forward="true" selection-end-line="125" />
+            <state relative-caret-position="272">
+              <caret line="16" lean-forward="true" selection-end-line="16" />
             </state>
           </provider>
         </entry>
@@ -131,10 +107,10 @@
       <list>
         <option value="HTML File" />
         <option value="TypeScript File" />
-        <option value="GLSL Shader" />
         <option value="JavaScript File" />
         <option value="Python Script" />
         <option value="CoffeeScript File" />
+        <option value="GLSL Shader" />
       </list>
     </option>
   </component>
@@ -212,17 +188,20 @@
         <option value="$PROJECT_DIR$/cocos/shaderDemo/coffee/test.coffee" />
         <option value="$PROJECT_DIR$/cocos/shaderDemo/MakeFileList.py" />
         <option value="$PROJECT_DIR$/cocos/shaderDemo/script/App.js" />
-        <option value="$PROJECT_DIR$/cocos/shaderDemo/coffee/unit/Resource.coffee" />
         <option value="$PROJECT_DIR$/cocos/shaderDemo/coffee/App.coffee" />
         <option value="$PROJECT_DIR$/cocos/shaderDemo/main.js" />
         <option value="$PROJECT_DIR$/cocos/shaderDemo/script/layer/LayerWave.js" />
         <option value="$PROJECT_DIR$/cocos/shaderDemo/src/TapWater.js" />
         <option value="$PROJECT_DIR$/cocos/shaderDemo/script/layer/TapWater.js" />
-        <option value="$PROJECT_DIR$/cocos/shaderDemo/coffee/scene/MainScene.coffee" />
         <option value="$PROJECT_DIR$/cocos/shaderDemo/coffee/layer/TapWater.coffee" />
         <option value="$PROJECT_DIR$/cocos/shaderDemo/buildScript.py" />
         <option value="$PROJECT_DIR$/cocos/shaderDemo/coffee/layer/LayerWave.coffee" />
+        <option value="$PROJECT_DIR$/cocos/shaderDemo/res/shader/rubcard/fragmentcard.fsh" />
+        <option value="$PROJECT_DIR$/cocos/shaderDemo/res/shader/rubcard/vertexcard.vsh" />
+        <option value="$PROJECT_DIR$/cocos/shaderDemo/coffee/unit/Resource.coffee" />
+        <option value="$PROJECT_DIR$/cocos/shaderDemo/res/shader/rubcard/fragentcard.glsl" />
         <option value="$PROJECT_DIR$/cocos/shaderDemo/coffee/layer/LayerRubCard.coffee" />
+        <option value="$PROJECT_DIR$/cocos/shaderDemo/coffee/scene/MainScene.coffee" />
       </list>
     </option>
   </component>
@@ -236,8 +215,8 @@
     <handled-path value="$PROJECT_DIR$/cocos/shaderDemo/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1915" />
-    <option name="y" value="23" />
+    <option name="x" value="-1902" />
+    <option name="y" value="72" />
     <option name="width" value="1920" />
     <option name="height" value="967" />
   </component>
@@ -294,6 +273,53 @@
             <path>
               <item name="webgl" type="b2602c69:ProjectViewProjectNode" />
               <item name="webgl" type="462c0819:PsiDirectoryNode" />
+              <item name="cocos" type="462c0819:PsiDirectoryNode" />
+              <item name="shaderDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="coffee" type="462c0819:PsiDirectoryNode" />
+              <item name="unit" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webgl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webgl" type="462c0819:PsiDirectoryNode" />
+              <item name="cocos" type="462c0819:PsiDirectoryNode" />
+              <item name="shaderDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webgl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webgl" type="462c0819:PsiDirectoryNode" />
+              <item name="cocos" type="462c0819:PsiDirectoryNode" />
+              <item name="shaderDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="462c0819:PsiDirectoryNode" />
+              <item name="shader" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webgl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webgl" type="462c0819:PsiDirectoryNode" />
+              <item name="cocos" type="462c0819:PsiDirectoryNode" />
+              <item name="shaderDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="462c0819:PsiDirectoryNode" />
+              <item name="shader" type="462c0819:PsiDirectoryNode" />
+              <item name="rubcard" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webgl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webgl" type="462c0819:PsiDirectoryNode" />
+              <item name="cocos" type="462c0819:PsiDirectoryNode" />
+              <item name="shaderDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="script" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webgl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webgl" type="462c0819:PsiDirectoryNode" />
+              <item name="cocos" type="462c0819:PsiDirectoryNode" />
+              <item name="shaderDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="script" type="462c0819:PsiDirectoryNode" />
+              <item name="scene" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webgl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webgl" type="462c0819:PsiDirectoryNode" />
               <item name="egret" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -333,13 +359,15 @@
     </option>
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/cocos/shaderDemo/res/shader/rubcard" />
+      <recent name="$PROJECT_DIR$/cocos/shaderDemo/res/shader" />
+      <recent name="$PROJECT_DIR$/cocos/shaderDemo/res" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/cocos/shaderDemo/src" />
       <recent name="$PROJECT_DIR$/egret/shaderdemo/src" />
       <recent name="$PROJECT_DIR$" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/cocos/shaderDemo/res" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -427,22 +455,23 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1915" y="23" width="1920" height="967" extended-state="0" />
+    <frame x="-1902" y="72" width="1920" height="967" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3287841" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32821724" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32945284" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.18772137" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.24793388" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16134185" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.18772137" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.24793388" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1629393" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" weight="0.32960597" />
       <window_info anchor="right" id="SciView" order="3" weight="0.32960597" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39905548" />
       <window_info anchor="bottom" id="TypeScript" order="13" weight="0.3293979" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -465,69 +494,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/webgl-examples-gh-pages/tutorial/sample4/webgl-demo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="34" lean-forward="true" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webgl-examples-gh-pages/tutorial/sample4/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webgl-examples-gh-pages/tutorial/sample3/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="12477" column="4" selection-start-line="12477" selection-start-column="4" selection-end-line="12477" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/egret/shaderdemo/libs/modules/eui/eui.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="409" column="14" selection-start-line="409" selection-start-column="14" selection-end-line="409" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cocos/shaderDemo/frameworks/cocos2d-html5/extensions/gui/scrollview/CCTableView.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="190" column="22" lean-forward="true" selection-start-line="190" selection-start-column="22" selection-end-line="190" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webgl-examples-gh-pages/tutorial/sample3/webgl-demo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="310" lean-forward="true" selection-start-line="310" selection-end-line="310" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cocos/shaderDemo/frameworks/cocos2d-html5/cocos2d/core/renderer/RendererWebGL.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3519">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cocos/shaderDemo/frameworks/cocos2d-html5/cocos2d/core/CCDirector.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="268" column="34" selection-start-line="268" selection-start-column="34" selection-end-line="268" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cocos/shaderDemo/frameworks/cocos2d-html5/cocos2d/core/layers/CCLayer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -565,13 +531,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="18" selection-start-column="18" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cocos/shaderDemo/coffee/unit/Resource.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
         </state>
       </provider>
     </entry>
@@ -694,13 +653,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cocos/shaderDemo/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="45" column="24" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cocos/shaderDemo/buildScript.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -729,9 +681,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="933">
           <caret line="66" column="77" lean-forward="true" selection-start-line="66" selection-start-column="77" selection-end-line="66" selection-end-column="77" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -759,42 +708,113 @@
     <entry file="file://$PROJECT_DIR$/cocos/shaderDemo/coffee/App.coffee">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="8" column="30" lean-forward="true" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cocos/shaderDemo/coffee/scene/MainScene.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-581">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
+          <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cocos/shaderDemo/coffee/layer/LayerWave.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-608">
+        <state relative-caret-position="442">
           <caret line="26" column="31" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cocos/shaderDemo/coffee/layer/TapWater.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
+        <state relative-caret-position="1071">
           <caret line="63" lean-forward="true" selection-end-line="125" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cocos/shaderDemo/coffee/layer/LayerRubCard.coffee">
+    <entry file="file://$PROJECT_DIR$/cocos/shaderDemo/res/shader/fragmentWather.fsh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="28" column="36" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
+        <state relative-caret-position="289">
+          <caret line="17" lean-forward="true" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cocos/shaderDemo/res/shader/vertex.vsh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" lean-forward="true" selection-end-line="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cocos/shaderDemo/src/resource.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        <state relative-caret-position="51">
+          <caret line="3" column="37" lean-forward="true" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cocos/shaderDemo/res/shader/rubcard/vertexcard.vsh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cocos/shaderDemo/res/shader/rubcard/fragmentcard.fsh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" lean-forward="true" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cocos/shaderDemo/coffee/unit/Resource.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="53" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cocos/shaderDemo/coffee/layer/LayerRubCard.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cocos/shaderDemo/script/scene/MainScene.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-401" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cocos/shaderDemo/coffee/scene/MainScene.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="38" column="28" lean-forward="true" selection-start-line="38" selection-start-column="28" selection-end-line="38" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cocos/shaderDemo/res/shader/vertex.glsl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cocos/shaderDemo/res/shader/fragmentWather.glsl">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cocos/shaderDemo/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cocos/shaderDemo/res/shader/rubcard/fragentcard.glsl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="63" selection-start-line="8" selection-start-column="63" selection-end-line="8" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cocos/shaderDemo/res/shader/rubcard/vertexcard.glsl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="36" lean-forward="true" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
         </state>
       </provider>
     </entry>

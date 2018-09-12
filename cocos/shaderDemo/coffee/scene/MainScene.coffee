@@ -37,6 +37,7 @@ MainScene::init = ->
       data  = [
         {item: "TapWater"},
         {item: "LayerWave"},
+        {item:  "LayerRubCard"}
       ]
       this.dataList = data
       tableView.reloadData()  

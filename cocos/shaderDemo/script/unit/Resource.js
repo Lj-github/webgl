@@ -3,8 +3,8 @@ var g_resources, i, j, len, res;
 
 res = {
   HelloWorld_png: "res/HelloWorld.png",
-  fragmentWather: "res/shader/fragmentWather.fsh",
-  vertex: "res/shader/vertex.vsh"
+  fragmentWather: "res/shader/fragmentWather.glsl",
+  vertex: "res/shader/vertex.glsl"
 };
 
 g_resources = [];

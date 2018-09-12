@@ -42,6 +42,8 @@ MainScene.prototype.init = function() {
           item: "TapWater"
         }, {
           item: "LayerWave"
+        }, {
+          item: "LayerRubCard"
         }
       ];
       this.dataList = data;
