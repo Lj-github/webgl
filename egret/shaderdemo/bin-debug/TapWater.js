@@ -21,10 +21,12 @@ var TapWater = (function (_super) {
             return ar;
         }(10);
         _this.initUI();
+        _this.scaleX = _this.scaleY = 0.8;
         return _this;
     }
     TapWater.prototype.initUI = function () {
         var _this = this;
+        // todo  egret 貌似对 shader 支持的还不够
         //创建可点击的shader 点击水纹
         var vertexSrc = RES.getRes("vertex_glsl");
         console.log(vertexSrc);

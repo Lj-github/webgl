@@ -17,6 +17,9 @@
 		"bin-debug/Main.js",
 		"bin-debug/Platform.js",
 		"bin-debug/TapWater.js",
-		"bin-debug/ThemeAdapter.js"
+		"bin-debug/ThemeAdapter.js",
+		"bin-debug/layer/LayerWave.js",
+		"bin-debug/pannel/BtnShader.js",
+		"bin-debug/pannel/NodeShaderBtn.js"
 	]
 }

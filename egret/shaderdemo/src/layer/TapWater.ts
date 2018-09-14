@@ -16,6 +16,7 @@ class TapWater extends eui.Component{
     constructor(){
         super()
         this.initUI()
+        //this.scaleX = this.scaleY  = 0.8
     }
     private initUI(){
 
