@@ -21,8 +21,8 @@ var TapWater = (function (_super) {
             return ar;
         }(10);
         _this.initUI();
-        _this.scaleX = _this.scaleY = 0.8;
         return _this;
+        //this.scaleX = this.scaleY  = 0.8
     }
     TapWater.prototype.initUI = function () {
         var _this = this;

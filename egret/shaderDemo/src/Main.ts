@@ -92,17 +92,25 @@ class Main extends egret.DisplayObjectContainer {
      * 创建游戏场景
      * Create a game scene
      */
-    private createGameScene() {
-        let btnList = new NodeShaderBtn()
-        this.addChild(btnList)
+    private btnList:NodeShaderBtn
+    private uiGroup :eui.Group
 
-        NodeShaderBtn.
+    private createGameScene() {
+        this.uiGroup = new eui.Group()
+        this.addChild(this.uiGroup)
+
+        this.btnList = new NodeShaderBtn()
+        this.addChild(this.btnList)
+
+        this.btnList.list.addEventListener(eui.ItemTapEvent.ITEM_TAP, this.onChangeData, this)
         RES.getResAsync("description_json", this.startAnimation, this)
 
 
+    }
+    private onChangeData(){
 
-
-
+        this.uiGroup.removeChildren()
+        this.uiGroup.addChild(new window[NodeShaderBtn.listData[this.btnList.list.selectedIndex]]())
 
     }
 
