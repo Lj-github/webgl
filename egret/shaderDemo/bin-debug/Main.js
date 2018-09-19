@@ -152,6 +152,10 @@ var Main = (function (_super) {
         this.addChild(this.btnList);
         this.btnList.list.addEventListener(eui.ItemTapEvent.ITEM_TAP, this.onChangeData, this);
         RES.getResAsync("description_json", this.startAnimation, this);
+        var sound = new Sound("resource/music/leeloostheme.mp3");
+        this.addChild(sound);
+        sound.position = 7;
+        window["ss"] = sound;
     };
     Main.prototype.onChangeData = function () {
         this.uiGroup.removeChildren();

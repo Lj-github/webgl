@@ -106,6 +106,14 @@ class Main extends egret.DisplayObjectContainer {
         RES.getResAsync("description_json", this.startAnimation, this)
 
 
+        let sound =  new Sound("resource/music/leeloostheme.mp3")
+        this.addChild(sound)
+        sound.position = 7
+        window["ss"] = sound
+
+
+
+
     }
     private onChangeData(){
 

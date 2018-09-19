@@ -4,7 +4,6 @@ interface btnData {
 }
 
 class BtnShader extends  eui.ItemRenderer{
-
     constructor(){
         super()
     }
