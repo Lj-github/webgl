@@ -3,4 +3,8 @@ cocos/shaderDemo/script/
 cocos/shaderDemo/.idea/
 
 egret/shaderdemo/bin-debug/
-cocos/shaderdemo/.wing/
+egret/shaderdemo/.wing/
+
+
+egret/puremvc/bin-debug/
+egret/puremvc/.wing/
