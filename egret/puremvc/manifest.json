@@ -8,7 +8,9 @@
 		"libs/modules/dragonBones/dragonBones.js",
 		"libs/modules/game/game.js",
 		"libs/modules/socket/socket.js",
-		"libs/modules/promise/promise.js"
+		"libs/modules/promise/promise.js",
+		"libs/gameModules/puremvc/bin/puremvc.js",
+		"libs/gameModules/thirdLibs/bin/thirdLibs.js"
 	],
 	"game": [
 		"bin-debug/AssetAdapter.js",

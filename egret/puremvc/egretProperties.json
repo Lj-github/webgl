@@ -38,6 +38,15 @@
     },
     {
       "name": "promise"
+    },
+    {
+        "name": "puremvc",
+        "path": "libs/gameModules/puremvc"
+    },
+    {
+        "name": "thirdLibs",
+        "path": "libs/gameModules/thirdLibs"
     }
+
   ]
 }
