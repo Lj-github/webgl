@@ -1,5 +1,5 @@
 {
-	"name": "puremvc",
-	"compilerVersion": "5.2.6",
-	 "typings": "typings/puremvc-typescript-standard-1.0.d.ts"
+    "version":"5.1.10",
+    "name":"puremvc",
+    "typings":"libs/puremvc.d.ts"
 }

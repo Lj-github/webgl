@@ -1,3 +1,4 @@
+
 declare module puremvc
 {
 	export interface ICommand
@@ -181,10 +182,10 @@ declare module puremvc
         public model: IModel;
         public view: IView;
         public controller: IController;
-        constructor ();
+        constructor (key:string);
         public initializeFacade(): void;
         public initializeModel(): void;
-        public initializeController(): void;
+        public initializeController(key:string): void;
         public initializeView(): void;
         public registerCommand(notificationName: string, commandClassRef: Function): void;
         public removeCommand(notificationName: string): void;
