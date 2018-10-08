@@ -1,34 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="68aafb0f-d936-40ac-9bc9-3a0a869c38f4" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/webgl.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webgl.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/egret/puremvc/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/egret/puremvc/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/egret/puremvc/resource/default.res.json" beforeDir="false" afterPath="$PROJECT_DIR$/egret/puremvc/resource/default.res.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/egret/puremvc/resource/ui/panel/BackpackSkin.exml" beforeDir="false" afterPath="$PROJECT_DIR$/egret/puremvc/resource/ui/panel/BackpackSkin.exml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/egret/puremvc/resource/ui/panel/ChuangDangSkin.exml" beforeDir="false" afterPath="$PROJECT_DIR$/egret/puremvc/resource/ui/panel/ChuangDangSkin.exml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/egret/puremvc/src/LoadingUI.ts" beforeDir="false" afterPath="$PROJECT_DIR$/egret/puremvc/src/LoadingUI.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/egret/puremvc/src/Main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/egret/puremvc/src/Main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/egret/puremvc/src/analyzer/EnJsonAnalyzer.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/egret/puremvc/src/analyzer/ProtoAnalyzer.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/egret/puremvc/src/constants/MainNotify.ts" beforeDir="false" afterPath="$PROJECT_DIR$/egret/puremvc/src/constants/MainNotify.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/egret/puremvc/src/core/controller/ControllerPrepCommand.ts" beforeDir="false" afterPath="$PROJECT_DIR$/egret/puremvc/src/core/controller/ControllerPrepCommand.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/egret/puremvc/src/core/controller/StartupCommand.ts" beforeDir="false" afterPath="$PROJECT_DIR$/egret/puremvc/src/core/controller/StartupCommand.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/egret/puremvc/src/core/view/GameLayerManager.ts" beforeDir="false" afterPath="$PROJECT_DIR$/egret/puremvc/src/core/view/GameLayerManager.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/egret/puremvc/src/core/view/MainManager.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/egret/puremvc/src/core/view/SceneManager.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/egret/puremvc/src/core/view/layer/BaseLayer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/egret/puremvc/src/core/view/layer/BaseLayer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/egret/puremvc/src/core/view/layer/BaseLayerMediator.ts" beforeDir="false" afterPath="$PROJECT_DIR$/egret/puremvc/src/core/view/layer/BaseLayerMediator.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/egret/puremvc/src/core/view/layer/BaseMediator.ts" beforeDir="false" afterPath="$PROJECT_DIR$/egret/puremvc/src/core/view/layer/BaseMediator.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/egret/puremvc/src/core/view/layer/PopUpManager.ts" beforeDir="false" afterPath="$PROJECT_DIR$/egret/puremvc/src/core/view/layer/PopUpManager.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/egret/puremvc/src/core/view/panel/BaseMediator.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/egret/puremvc/src/core/view/panel/PopUpManager.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/egret/puremvc/src/core/view/panel/mediator/BackpackMediator.ts" beforeDir="false" afterPath="$PROJECT_DIR$/egret/puremvc/src/core/view/panel/mediator/BackpackMediator.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/egret/puremvc/src/core/view/panel/mediator/ChuangDangMediator.ts" beforeDir="false" afterPath="$PROJECT_DIR$/egret/puremvc/src/core/view/panel/mediator/ChuangDangMediator.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/egret/puremvc/src/core/view/panel/panel/BackpackPanel.ts" beforeDir="false" afterPath="$PROJECT_DIR$/egret/puremvc/src/core/view/panel/panel/BackpackPanel.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/egret/puremvc/src/core/view/panel/panel/ChuangDangPanel.ts" beforeDir="false" afterPath="$PROJECT_DIR$/egret/puremvc/src/core/view/panel/panel/ChuangDangPanel.ts" afterDir="false" />
-    </list>
+    <list default="true" id="68aafb0f-d936-40ac-9bc9-3a0a869c38f4" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -55,98 +28,7 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="BackpackMediator.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/egret/puremvc/src/core/view/panel/mediator/BackpackMediator.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="103">
-              <caret line="8" column="66" selection-start-line="8" selection-start-column="66" selection-end-line="8" selection-end-column="66" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BackpackPanel.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/egret/puremvc/src/core/view/panel/panel/BackpackPanel.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="20" lean-forward="true" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GameLayerManager.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/egret/puremvc/src/core/view/GameLayerManager.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2128">
-              <caret line="161" column="43" selection-start-line="161" selection-start-column="43" selection-end-line="161" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Logger.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/egret/puremvc/src/com/Logger.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BaseLayerMediator.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/egret/puremvc/src/core/view/layer/BaseLayerMediator.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BaseLayer.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/egret/puremvc/src/core/view/layer/BaseLayer.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
-              <caret line="140" column="9" selection-start-line="137" selection-start-column="7" selection-end-line="140" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/egret/puremvc/src/Main.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="15" column="10" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ChuangDangMediator.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/egret/puremvc/src/core/view/panel/mediator/ChuangDangMediator.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="71" selection-start-line="8" selection-start-column="71" selection-end-line="8" selection-end-column="71" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ChuangDangPanel.ts" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/egret/puremvc/src/core/view/panel/panel/ChuangDangPanel.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/egret/puremvc/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -190,8 +72,8 @@
       <find>beforeRemove</find>
       <find>createComplete</find>
       <find>onCreateComplete</find>
-      <find>getUILayerAnsyc</find>
       <find>BackpackPanel</find>
+      <find>getUILayerAnsyc</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -266,8 +148,9 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/cocos/shaderDemo/node_modules" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
-    <option name="y" value="59" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="190" />
+    <option name="y" value="39" />
     <option name="width" value="1920" />
     <option name="height" value="979" />
   </component>
@@ -286,68 +169,6 @@
             <path>
               <item name="webgl" type="b2602c69:ProjectViewProjectNode" />
               <item name="webgl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="webgl" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webgl" type="462c0819:PsiDirectoryNode" />
-              <item name="cocos" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="webgl" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webgl" type="462c0819:PsiDirectoryNode" />
-              <item name="egret" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="webgl" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webgl" type="462c0819:PsiDirectoryNode" />
-              <item name="egret" type="462c0819:PsiDirectoryNode" />
-              <item name="puremvc" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="webgl" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webgl" type="462c0819:PsiDirectoryNode" />
-              <item name="egret" type="462c0819:PsiDirectoryNode" />
-              <item name="puremvc" type="462c0819:PsiDirectoryNode" />
-              <item name="resource" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="webgl" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webgl" type="462c0819:PsiDirectoryNode" />
-              <item name="egret" type="462c0819:PsiDirectoryNode" />
-              <item name="puremvc" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="webgl" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webgl" type="462c0819:PsiDirectoryNode" />
-              <item name="egret" type="462c0819:PsiDirectoryNode" />
-              <item name="puremvc" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="webgl" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webgl" type="462c0819:PsiDirectoryNode" />
-              <item name="egret" type="462c0819:PsiDirectoryNode" />
-              <item name="puremvc" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="component" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="webgl" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webgl" type="462c0819:PsiDirectoryNode" />
-              <item name="egret" type="462c0819:PsiDirectoryNode" />
-              <item name="puremvc" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="webgl" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webgl" type="462c0819:PsiDirectoryNode" />
-              <item name="egret" type="462c0819:PsiDirectoryNode" />
-              <item name="puremvc" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="constants" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -473,7 +294,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="59" width="1920" height="979" extended-state="0" />
+    <frame x="190" y="39" width="1920" height="979" extended-state="0" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3287841" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -831,7 +652,7 @@
     <entry file="file://$PROJECT_DIR$/egret/puremvc/src/core/view/panel/panel/BackpackPanel.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
-          <caret line="3" column="20" lean-forward="true" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
+          <caret line="3" column="20" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -844,8 +665,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/egret/puremvc/src/core/view/panel/panel/ChuangDangPanel.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+        <state relative-caret-position="170">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
