@@ -58,10 +58,13 @@ class Shader0 extends eui.Component {
             "void main(void) {\n" +
             "vec2 uvs = vTextureCoord.xy;\n" +
             "vec4 fg = texture2D(uSampler, vTextureCoord);\n" +
-            // "fg.rgb +=vColor.rgb;\n" +
             "float alp =1.0-uvs.y;\n" +
             "fg.a=alp;\n" +
             "fg.rgb+=vColor.rgb;\n" +
+            "if(fg.b<=0.00000001){\n" +
+            "alp=0.0;\n" +
+            "fg.a=alp;\n" +
+            "};\n" +
             "fg.r=fg.r*alp;\n" +
             "fg.g=fg.g*alp;\n" +
             "fg.b=fg.b*alp;\n" +
