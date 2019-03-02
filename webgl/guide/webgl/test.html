@@ -12,18 +12,31 @@
 <script src="../lib/webgl-debug.js"></script>
 <script src="../lib/cuon-utils.js"></script>
 
+<script id="3d-vertex-shader" type="x-shader/x-vertex">
+ void main(){
+    gl_Position = vec4(-0.9,0.0,0.0,1.0);
+    gl_PointSize = 100.0;
+}
+</script>
+<!-- fragment shader -->
+<script id="3d-fragment-shader" type="x-shader/x-fragment">
 
+// 从 vertex shader 传过来的值
+void main() {
+   gl_FragColor =vec4(1.0,0.0,0.0,1.0);;
+}
+</script>
 <script>
     function main() {
 
-        var vshader_source = [ //直接在 shader 代码里面写死了
+        const vshader_source = [ //直接在 shader 代码里面写死了
             'void main(){',
             'gl_Position = vec4(-0.9,0.0,0.0,1.0);',
             'gl_PointSize = 100.0;',
             '}'
         ].join("\n")
 
-        var fshader_source = [
+        const fshader_source = [
             'void main(){',
             'gl_FragColor = vec4(1.0,0.0,0.0,1.0);',
             '}'
@@ -34,9 +47,10 @@
         if (!canvas) {
             return
         }
+        //debug 为true  可以直接打印 shader  错误
         let gl = getWebGLContext(canvas, true)
 
-        initShaders(gl, vshader_source, fshader_source)
+        initShaders(gl, document.getElementById("3d-vertex-shader").text, document.getElementById("3d-fragment-shader").text)
 
         //清空 color   r    g    b    a    清除4个参数
         gl.clearColor(0.0, 0.0, 0.0, 1.0)
