@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>webgl</title>
+</head>
+<body onload="main()">
+
+<canvas id="example" width="400" height="400"></canvas>
+
+<script src="../lib/webgl-utils.js"></script>
+<script src="../lib/webgl-debug.js"></script>
+<script src="../lib/cuon-utils.js"></script>
+
+
+<script>
+    function main() {
+
+        var vshader_source = [ //直接在 shader 代码里面写死了
+            'void main(){',
+            'gl_Position = vec4(-0.9,0.0,0.0,1.0);',
+            'gl_PointSize = 100.0;',
+            '}'
+        ].join("\n")
+
+        var fshader_source = [
+            'void main(){',
+            'gl_FragColor = vec4(1.0,0.0,0.0,1.0);',
+            '}'
+        ].join("\n")
+
+
+        let canvas = document.getElementById("example")
+        if (!canvas) {
+            return
+        }
+        let gl = getWebGLContext(canvas, true)
+
+        initShaders(gl, vshader_source, fshader_source)
+
+        //清空 color   r    g    b    a    清除4个参数
+        gl.clearColor(0.0, 0.0, 0.0, 1.0)
+        gl.clear(gl.COLOR_BUFFER_BIT)
+
+        function deaw() {
+            requestAnimationFrame(deaw)
+        }
+
+        gl.drawArrays(gl.POINTS, 0, 1)
+
+    }
+</script>
+</body>
+</html>
