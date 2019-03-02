@@ -42,6 +42,7 @@ void main() {
 
       gl_Position = vec4(clipSpace * vec2(1, -1), 0, 1);
 }
+
 </script>
 <!-- fragment shader -->
 <script id="2d-fragment-shader" type="x-shader/x-fragment">
@@ -56,6 +57,7 @@ uniform vec4 u_color;
 void main() {
    gl_FragColor = u_color;
 }
+
 </script>
 <script>
     "use strict";
