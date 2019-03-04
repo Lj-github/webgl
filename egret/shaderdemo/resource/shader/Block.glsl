@@ -21,7 +21,7 @@ vec4 fg = texture2D(uSampler, vTextureCoord);
     float y_now = floor(uvs.x * count);
     float y_base = index * -1.0+ b;
     if (y_now<y_base){
-        fg.rgba = vec4(0.0,0.0,0.0,1.0);
+        fg.rgba = vec4(0.0,0.0,0.0,0.0);
     }else{
         fg.rgb += sin(customUniform + uvs.x * 2. + uvs.y * 2.) * 0.2;
     }
