@@ -12,15 +12,16 @@
 		"libs/modules/promise/promise.js"
 	],
 	"game": [
-		"bin-debug/layer/Shader2.js",
 		"bin-debug/AssetAdapter.js",
+		"bin-debug/LoadingUI.js",
 		"bin-debug/Main.js",
 		"bin-debug/Platform.js",
 		"bin-debug/ThemeAdapter.js",
 		"bin-debug/implementsTest/baseTest.js",
+		"bin-debug/layer/Block.js",
 		"bin-debug/layer/Shader0.js",
 		"bin-debug/layer/Shader1.js",
-		"bin-debug/LoadingUI.js",
+		"bin-debug/layer/Shader2.js",
 		"bin-debug/layer/Shader3.js",
 		"bin-debug/layer/Shader4.js",
 		"bin-debug/layer/Shader5.js",
