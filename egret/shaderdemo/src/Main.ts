@@ -46,13 +46,13 @@ class Main extends egret.DisplayObjectContainer {
             }
         })
 
-        egret.lifecycle.onPause = () => {
-            egret.ticker.pause();
-        }
-
-        egret.lifecycle.onResume = () => {
-            egret.ticker.resume();
-        }
+        // egret.lifecycle.onPause = () => {
+        //     egret.ticker.pause();
+        // }
+        //
+        // egret.lifecycle.onResume = () => {
+        //     egret.ticker.resume();
+        // }
 
         this.runGame().catch(e => {
             console.log(e);
