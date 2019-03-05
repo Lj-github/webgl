@@ -13,16 +13,11 @@
 <script src="../../lib/cuon-utils.js"></script>
 
 <script id="3d-vertex-shader" type="x-shader/x-vertex">
+//gl_PointSize  只是 画点的时候 用
 attribute vec4 a_Position;
-attribute float a_PointSize;
  void main(){
     gl_Position = a_Position;
-    gl_PointSize = a_PointSize;
 }
-
-
-
-
 
 </script>
 <script id="3d-fragment-shader" type="x-shader/x-fragment">
@@ -33,9 +28,6 @@ uniform vec4 u_FragColor;
 void main() {
    gl_FragColor=u_FragColor;
 }
-
-
-
 
 
 </script>
@@ -67,29 +59,26 @@ void main() {
 
         //返回  vertex shader  的存储地址
 
-        var a_PointSize = gl.getAttribLocation(gl.program, "a_PointSize")
         //返回  fragment shader  的存储地址
         var u_FragColor = gl.getUniformLocation(gl.program, "u_FragColor")
-
 
 
         gl.clearColor(0.0, 0.0, 0.0, 1.0)
         gl.clear(gl.COLOR_BUFFER_BIT)
 
-       function inteVertexBuffers(gl) {
-            var vertices = new Float32Array([0.0,0.5,-0.5,-0.5,0.5,-0.5])
-            let n = vertices.length/2
+        function inteVertexBuffers(gl) {
+            var vertices = new Float32Array([0.0, 0.5, -0.5, -0.5, 0.5, -0.5])
+            let n = vertices.length / 2
             let vertexBuffer = gl.createBuffer()
-            gl.bindBuffer(gl.ARRAY_BUFFER,vertexBuffer)
+            gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer)
 
-            gl.bufferData(gl.ARRAY_BUFFER,vertices,gl.STATIC_DRAW)//staticdraw
+            gl.bufferData(gl.ARRAY_BUFFER, vertices, gl.STATIC_DRAW)//staticdraw
             let a_Position = gl.getAttribLocation(gl.program, "a_Position")
 
-            gl.vertexAttribPointer(a_Position,2,gl.FLOAT,false,0,0) // 2: vertices 两个 两个取
+            gl.vertexAttribPointer(a_Position, 2, gl.FLOAT, false, 0, 0) // 2: vertices 两个 两个取
             gl.enableVertexAttribArray(a_Position)
             return n
         }
-
 
         //清空 color   r    g    b    a    清除4个参数
         //gl.clearColor(0.0, 0.0, 0.0, 1.0)
@@ -98,10 +87,13 @@ void main() {
 
 
         // gl.vertexAttrib3f(a_Position, g_point[i][0], g_point[i][1], 0.0)
-        gl.vertexAttrib1f(a_PointSize, 10.0)
         let n = inteVertexBuffers(gl)
 
-        gl.drawArrays(gl.POINTS, 0, n)
+        gl.drawArrays(gl.TRIANGLES, 0, n)
+
+
+        //TODO webgl编程指南 90 页
+
 
     }
 </script>
