@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>webgl</title>
+</head>
+<body onload="main()">
+<canvas id="example" width="400" height="400"></canvas>
+<script src="../../lib/webgl-utils.js"></script>
+<script src="../../lib/webgl-debug.js"></script>
+<script src="../../lib/cuon-utils.js"></script>
+
+<script id="3d-vertex-shader" type="x-shader/x-vertex">
+attribute vec4 a_Position;
+attribute vec2 a_TexCoord;//纹理
+varying vec2 v_TexCoord;
+ void main(){
+    gl_Position = a_Position;
+    v_TexCoord = a_TexCoord;
+}
+
+
+
+
+
+</script>
+<script id="3d-fragment-shader" type="x-shader/x-fragment">
+// 从 vertex shader 传过来的值
+
+precision highp float; //精度
+uniform sampler2D u_Sampler;
+varying vec2 v_TexCoord;
+void main() {
+   gl_FragColor=texture2D(u_Sampler,v_TexCoord) ;
+}
+
+
+
+
+
+</script>
+<script>
+    function main() {
+        let canvas = document.getElementById("example")
+        if (!canvas) {
+            return
+        }
+        //debug 为true  可以直接打印 shader  错误
+        let gl = getWebGLContext(canvas, true)
+
+
+        if (! initShaders(gl, document.getElementById("3d-vertex-shader").text, document.getElementById("3d-fragment-shader").text)) {
+            console.log('Failed to intialize shaders.');
+            return;
+        }
+
+        //返回  vertex shader  的存储地址
+        //返回  fragment shader  的存储地址
+
+        function inteVertexBuffers(gl) {
+            var vertices = new Float32Array([
+                -0.5, 0.5, 0.3, 1.7,
+                -0.5, -0.5, -0.3, -0.2,
+                0.5, 0.5, 1.7, 1.7,
+                0.5, -0.5, 1.7, -0.2,
+            ])
+            let n = 4
+            let vertexBuffer = gl.createBuffer()
+            gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer)
+            gl.bufferData(gl.ARRAY_BUFFER, vertices, gl.STATIC_DRAW)//staticdraw
+
+            var FSIZE = vertices.BYTES_PER_ELEMENT;
+            //Get the storage location of a_Position, assign and enable buffer
+            var a_Position = gl.getAttribLocation(gl.program, 'a_Position');
+            if (a_Position < 0) {
+                console.log('Failed to get the storage location of a_Position');
+                return -1;
+            }
+            gl.vertexAttribPointer(a_Position, 2, gl.FLOAT, false, FSIZE * 4, 0);
+            gl.enableVertexAttribArray(a_Position);  // Enable the assignment of the buffer object
+
+            // Get the storage location of a_TexCoord
+            var a_TexCoord = gl.getAttribLocation(gl.program, 'a_TexCoord');
+            if (a_TexCoord < 0) {
+                console.log('Failed to get the storage location of a_TexCoord');
+                return -1;
+            }
+            // Assign the buffer object to a_TexCoord variable
+            gl.vertexAttribPointer(a_TexCoord, 2, gl.FLOAT, false, FSIZE * 4, FSIZE * 2);
+            gl.enableVertexAttribArray(a_TexCoord);  // Enable the assignment of the buffer object
+            return n
+        }
+
+        function initTexture(gl, n) {
+            let texture = gl.createTexture()
+            let u_Sampler = gl.getUniformLocation(gl.program, "u_Sampler")
+            let img = new Image()
+            img.onload = function () {
+                loadTexture(gl, n, texture, u_Sampler, img)
+            }
+            img.src = "img/sky.JPG"
+            return true
+
+        }
+
+        function loadTexture(l, n, texture, u_Sampler, img) {
+            gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, 1)
+
+            gl.activeTexture(gl.TEXTURE0)
+
+            gl.bindTexture(gl.TEXTURE_2D, texture)
+
+            gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR)
+              gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE)
+              gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.MIRRORED_REPEAT)
+
+            gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGB, gl.RGB,gl.UNSIGNED_BYTE, img)
+
+            gl.uniform1i(u_Sampler, 0)
+            gl.clear(gl.COLOR_BUFFER_BIT);   // Clear <canvas>
+
+            gl.drawArrays(gl.TRIANGLE_STRIP, 0, n); // Draw the rectangle
+
+        }
+
+        var n = inteVertexBuffers(gl)
+        gl.clearColor(0.0, 0.0, 0.0, 1.0);
+        initTexture(gl, n)
+
+        //清空 color   r    g    b    a    清除4个参数
+        //gl.clearColor(0.0, 0.0, 0.0, 1.0)
+
+
+    }
+</script>
+</body>
+</html>
