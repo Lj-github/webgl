@@ -9,7 +9,6 @@
 <script src="../../lib/webgl-utils.js"></script>
 <script src="../../lib/webgl-debug.js"></script>
 <script src="../../lib/cuon-utils.js"></script>
-
 <script id="3d-vertex-shader" type="x-shader/x-vertex">
 attribute vec4 a_Position;
 attribute vec2 a_TexCoord;//纹理
@@ -18,25 +17,15 @@ varying vec2 v_TexCoord;
     gl_Position = a_Position;
     v_TexCoord = a_TexCoord;
 }
-
-
-
-
-
 </script>
 <script id="3d-fragment-shader" type="x-shader/x-fragment">
 // 从 vertex shader 传过来的值
-
 precision mediump float; //精度
 uniform sampler2D u_Sampler;
 varying vec2 v_TexCoord;
 void main() {
    gl_FragColor=texture2D(u_Sampler,v_TexCoord) ;
 }
-
-
-
-
 
 </script>
 <script>
