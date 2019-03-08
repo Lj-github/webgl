@@ -1,5 +1,5 @@
 class NodeShaderBtn extends eui.Component {
-    static listData = ["Shader0","Shader1","Shader2","Shader3","Shader4","Shader5","Shader6","Block","CleanShape"]
+    static listData = ["Shader0","Shader1","Shader2","Shader3","Shader4","Shader5","Shader6","Block","CleanShape","Spread"]
     list:eui.List
     constructor(){
         super()
