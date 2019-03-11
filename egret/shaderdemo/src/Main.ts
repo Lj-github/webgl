@@ -127,9 +127,9 @@ class Main extends egret.DisplayObjectContainer {
      * Create a Bitmap object according to name keyword.As for the property of name please refer to the configuration file of resources/resource.json.
      */
     static createBitmapByName(name: string) {
-        let result = new eui.Image();
+        let result = new egret.Bitmap();
         let texture: egret.Texture = RES.getRes(name);
-        result.source = texture;
+        result.texture = texture;
         return result;
     }
 
