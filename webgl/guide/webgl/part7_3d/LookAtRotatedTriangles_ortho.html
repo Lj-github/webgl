@@ -126,7 +126,6 @@ void main() {
                     return
             }
             draw(gl,n,u_ProjMatrix,projMatrix,nf)
-
         }
         //视图
         projMatrix.setLookAt(0.20, 0.25, 0.25, 0, 0, 0, 0, 1, 0);
@@ -144,9 +143,7 @@ void main() {
             nf.innerHTML = 'near: ' + Math.round(g_near * 100)/100 + ', far: ' + Math.round(g_far*100)/100;
             //requestAnimationFrame(draw)
         }
-
         //draw()
-        //TODO 233
     }
 </script>
 </body>
