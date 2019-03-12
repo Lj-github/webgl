@@ -23,5 +23,5 @@ const vec2 center = vec2(-1.0, 1.0);
 void main(void){
 	vTextureCoord = aTextureCoord;
 	vec2 pos = (aVertexPosition / projectionVector) + center ;
-	gl_Position   =  mvpMatrix * vec4((aVertexPosition / projectionVector) + center ,abs(1.0*1.0/pos.y) , 1.0);
+	gl_Position   =  mvpMatrix * vec4((aVertexPosition / projectionVector) + center ,1.0 , 1.0);
 }
