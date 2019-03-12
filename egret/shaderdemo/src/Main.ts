@@ -30,7 +30,6 @@
 class Main extends egret.DisplayObjectContainer {
 
 
-
     public constructor() {
         super();
         this.addEventListener(egret.Event.ADDED_TO_STAGE, this.onAddToStage, this);
@@ -54,22 +53,34 @@ class Main extends egret.DisplayObjectContainer {
         //     egret.ticker.resume();
         // }
 
+        //inject the custom material parser
+        //注入自定义的素材解析器
+        let assetAdapter = new AssetAdapter();
+        egret.registerImplementation("eui.IAssetAdapter", assetAdapter);
+        egret.registerImplementation("eui.IThemeAdapter", new ThemeAdapter());
+
         this.runGame().catch(e => {
             console.log(e);
         })
 
 
-
     }
 
     private async runGame() {
-        await this.loadResource()
+         await this.loadResource()
         this.createGameScene();
-        const result = await RES.getResAsync("description_json")
-        this.startAnimation(result);
+
         await platform.login();
         const userInfo = await platform.getUserInfo();
         console.log(userInfo);
+
+        // await this.loadResource()
+        // this.createGameScene();
+        // const result = await RES.getResAsync("description_json")
+        // this.startAnimation(result);
+        // await platform.login();
+        // const userInfo = await platform.getUserInfo();
+        // console.log(userInfo);
 
     }
 
@@ -78,6 +89,7 @@ class Main extends egret.DisplayObjectContainer {
             const loadingView = new LoadingUI();
             this.stage.addChild(loadingView);
             await RES.loadConfig("resource/default.res.json", "resource/");
+            await this.loadTheme();
             await RES.loadGroup("preload", 0, loadingView);
             this.stage.removeChild(loadingView);
         }
@@ -86,37 +98,50 @@ class Main extends egret.DisplayObjectContainer {
         }
     }
 
+    private loadTheme() {
+        return new Promise((resolve, reject) => {
+            // load skin theme configuration file, you can manually modify the file. And replace the default skin.
+            //加载皮肤主题配置文件,可以手动修改这个文件。替换默认皮肤。
+            let theme = new eui.Theme("resource/default.thm.json", this.stage);
+            theme.addEventListener(eui.UIEvent.COMPLETE, () => {
+                resolve();
+            }, this);
+
+        })
+    }
+
     private textfield: egret.TextField;
 
     /**
      * 创建游戏场景
      * Create a game scene
      */
-    private btnList:NodeShaderBtn
-    private uiGroup :eui.Group
+    private btnList: NodeShaderBtn
+    private uiGroup: eui.Group
 
     private createGameScene() {
+
+
         this.uiGroup = new eui.Group()
         this.addChild(this.uiGroup)
 
         this.btnList = new NodeShaderBtn()
         this.addChild(this.btnList)
 
+
+
         this.btnList.list.addEventListener(eui.ItemTapEvent.ITEM_TAP, this.onChangeData, this)
-        RES.getResAsync("description_json", this.startAnimation, this)
+        // RES.getResAsync("description_json", this.startAnimation, this)
 
 
-        let sound =  new Sound("resource/music/leeloostheme.mp3")
-        this.addChild(sound)
-        sound.position = 7
-        window["ss"] = sound
-
-
-
+        // let sound = new Sound("resource/music/leeloostheme.mp3")
+        // this.addChild(sound)
+        //sound.position = 7
+        //window["ss"] = sound
 
     }
-    private onChangeData(){
 
+    private onChangeData() {
         this.uiGroup.removeChildren()
         this.uiGroup.addChild(new window[NodeShaderBtn.listData[this.btnList.list.selectedIndex]]())
 

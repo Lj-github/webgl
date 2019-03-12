@@ -25,6 +25,14 @@ class Spread extends eui.Component {
         c.height = egret.MainContext.instance.stage.stageHeight
 
 
+        m.lookAt([0, -8.0, 8.0], [0, 0, 0], [0, 1, 0], vMatrix);
+        m.perspective(45, c.width / c.height, 0.1, 100, pMatrix);
+        m.multiply(pMatrix, vMatrix, tmpMatrix);
+        m.identity(mMatrix);
+        m.rotate(mMatrix, 0, [0, 1, 0], mMatrix);
+        m.multiply(tmpMatrix, mMatrix, mvpMatrix);
+
+
         let vertexSrc = RES.getRes("vertexv_glsl")
         let fragmentSrc1 = RES.getRes('fragmentWather_glsl')
         let customFilter1 = new egret.CustomFilter(
@@ -50,51 +58,44 @@ class Spread extends eui.Component {
         this.addEventListener(egret.Event.ENTER_FRAME, function () {
             // customFilter1.uniforms.u_posx += xxx
             //count += 2;
-            val[0] = val[0] + 0.1
-            if (val[0] >= 10) {
-                val[0] = -10
-            }
-            var rad = (count % 360) * Math.PI / 180;
-            // m.lookAt(val, [0, 0, 0], [0, 1, 0], vMatrix);
 
-            m.lookAt([0, -5.0, 5.0], [0, 0, 0], [0, 1, 0], vMatrix);
-            m.perspective(45, c.width / c.height, 0.1, 100, pMatrix);
-            m.multiply(pMatrix, vMatrix, tmpMatrix);
-
-            m.identity(mMatrix);
-
-            function translation(tx, ty) {
-                return [
-                  1, 0, 0,
-                  0, 1, 0,
-                  tx, ty, 1,
-                ];
-              }
-
-            m.translate(mMatrix, val[0], 1.0)
-
-            m.rotate(mMatrix, rad, [0, 1, 0], mMatrix);
-            m.multiply(tmpMatrix, mMatrix, mvpMatrix);
-            customFilter1.uniforms.mvpMatrix = mvpMatrix
+            // val[0] += 0.02
+            // if(val[0]>=4){
+            //     val[0] = -4
+            // }
+            // m.lookAt([0, -8.0, 8.0], [0, 1, 0], [0, 1, 0], vMatrix);
+            // m.perspective(45, c.width / c.height, 0.1, 100, pMatrix);
+            // m.multiply(pMatrix, vMatrix, tmpMatrix);
+            // m.identity(mMatrix);
+            // m.translate(mMatrix, val, mMatrix)
+            // m.rotate(mMatrix, 0, [0, 1, 0], mMatrix);
+            // m.multiply(tmpMatrix, mMatrix, mvpMatrix);
+            // customFilter1.uniforms.mvpMatrix = mvpMatrix
+            // customFilter1.uniforms.mvpMatrix = mvpMatrix
         }, this);
 
         var hSlider = new eui.HSlider();
         hSlider.width = 200;
-        hSlider.x = 20;
+        hSlider.x = 200;
         hSlider.y = 20;
-        hSlider.minimum = 0;//定义最小值
-        hSlider.maximum = 100;//定义最大值
+        hSlider.minimum = -50;//定义最小值
+        hSlider.maximum = 50;//定义最大值
         hSlider.value = 0;//定义默认值
-        let val = [2.0, -5.0, 5.0]
+        let val = [0, 0, 0]
         window["val"] = val
         this.addChild(hSlider)
 
         hSlider.addEventListener(eui.UIEvent.CHANGE, (evt: eui.UIEvent) => {
-
             console.log(evt.target.value);
-            val[0] = evt.target.value
-            m.lookAt(val, [0, 0, 0], [0, 1, 0], vMatrix);
+            val[0] = evt.target.value/12
+            m.lookAt([0, -8.0, 8.0], [0, 1, 0], [0, 1, 0], vMatrix);
+
+            //m.lookAt([0, -5.0, 5.0], [0, 0, 0], [0, 1, 0], vMatrix);
+            m.perspective(45, c.width / c.height, 0.1, 100, pMatrix);
+            m.multiply(pMatrix, vMatrix, tmpMatrix);
             m.identity(mMatrix);
+            m.translate(mMatrix, val, mMatrix)
+            m.rotate(mMatrix, 0, val, mMatrix);
             m.multiply(tmpMatrix, mMatrix, mvpMatrix);
             customFilter1.uniforms.mvpMatrix = mvpMatrix
 
@@ -102,36 +103,46 @@ class Spread extends eui.Component {
 
         var hSlider1 = new eui.HSlider();
         hSlider1.width = 200;
-        hSlider1.x = 20;
+        hSlider1.x = 200;
         hSlider1.y = 40;
-        hSlider1.minimum = 0;//定义最小值
-        hSlider1.maximum = 100;//定义最大值
+        hSlider1.minimum = -50;//定义最小值
+        hSlider1.maximum = 50;//定义最大值
         hSlider1.value = 0;//定义默认值
         this.addChild(hSlider1)
         hSlider1.addEventListener(eui.UIEvent.CHANGE, (evt: eui.UIEvent) => {
             console.log(evt.target.value);
-            val[1] = evt.target.value
-            m.lookAt(val, [0, 0, 0], [0, 1, 0], vMatrix);
+            val[1] = evt.target.value/12
+            m.lookAt([0, -8.0, 8.0], [0, 1, 0], [0, 1, 0], vMatrix);
+            m.perspective(45, c.width / c.height, 0.1, 100, pMatrix);
+            m.multiply(pMatrix, vMatrix, tmpMatrix);
             m.identity(mMatrix);
+
+            m.translate(mMatrix, val, mMatrix)
+
+            m.rotate(mMatrix, 0, [0, 1, 0], mMatrix);
             m.multiply(tmpMatrix, mMatrix, mvpMatrix);
+
             customFilter1.uniforms.mvpMatrix = mvpMatrix
         }, this)
 
         var hSlider2 = new eui.HSlider();
         hSlider2.width = 200;
-        hSlider2.x = 20;
+        hSlider2.x = 200;
         hSlider2.y = 60;
-        hSlider2.minimum = 0;//定义最小值
-        hSlider2.maximum = 100;//定义最大值
+        hSlider2.minimum = -50;//定义最小值
+        hSlider2.maximum = 50;//定义最大值
         hSlider2.value = 0;//定义默认值
         this.addChild(hSlider2)
         hSlider2.addEventListener(eui.UIEvent.CHANGE, (evt: eui.UIEvent) => {
             console.log(evt.target.value);
-            val[2] = evt.target.value
-            m.lookAt(val, [0, 0, 0], [0, 1, 0], vMatrix);
+            val[2] = evt.target.value/12
+            m.lookAt([0, -8.0, 8.0], [0, 1, 0], [0, 1, 0], vMatrix);
+            m.perspective(45, c.width / c.height, 0.1, 100, pMatrix);
+            m.multiply(pMatrix, vMatrix, tmpMatrix);
             m.identity(mMatrix);
+            m.translate(mMatrix, val, mMatrix)
+            m.rotate(mMatrix, 0, [0, 1, 0], mMatrix);
             m.multiply(tmpMatrix, mMatrix, mvpMatrix);
-            m.translate(val, vMatrix, mMatrix)
             customFilter1.uniforms.mvpMatrix = mvpMatrix
 
         }, this)
@@ -505,3 +516,4 @@ function matIV() {
 //             '\n' +
 //             '}\n' +
 //             '\n' +
+

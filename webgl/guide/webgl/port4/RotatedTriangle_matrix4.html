@@ -86,6 +86,7 @@ void main() {
         xformMatrix = new Matrix4();
         xformMatrix.setRotate(ANGLE, 0, 0, 1)
         // var x = new Matrix4()
+        xformMatrix.translate()
         xformMatrix.scale(0.5, 0.5, 0.5)// 后面的状态就不能 set XXX 了
         // xformMatrix.set(x)
         let u_xformMatrix = gl.getUniformLocation(gl.program, "u_xformMatrix")
