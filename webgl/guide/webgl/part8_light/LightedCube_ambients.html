@@ -15,15 +15,18 @@
 attribute vec4 a_Position;
 attribute vec4 a_Color;
 attribute vec4 a_Normal;
-varying vec4 v_Color;
-uniform mat4  u_MvpMatrix;
-uniform mat4 u_NormalMatrix;
+uniform mat4 u_MvpMatrix;
+uniform vec3 u_DiffuseLight;
 uniform vec3 u_LightDirection;
+uniform vec3 u_AmbientLight;   // 环境光
+varying vec4 v_Color;
  void main(){
-    gl_Position =u_MvpMatrix* a_Position ;
-    vec4 normal = u_NormalMatrix * a_Normal;
-   float nDotL = max(dot(u_LightDirection, normalize(normal.xyz)), 0.0);
-    v_Color = vec4(a_Color.xyz * nDotL, a_Color.a);
+    gl_Position = u_MvpMatrix * a_Position;
+    vec3 normal = normalize(a_Normal.xyz);
+    float nDotL = max(dot(u_LightDirection, normal), 0.0);
+    vec3 diffuse = u_DiffuseLight * a_Color.rgb * nDotL;
+    vec3 ambient = u_AmbientLight * a_Color.rgb;
+    v_Color = vec4(diffuse + ambient, a_Color.a);
 }
 
 </script>
@@ -34,6 +37,8 @@ varying vec4 v_Color;
 void main() {
    gl_FragColor=v_Color;
 }
+
+
 </script>
 <script>
     function main() {
@@ -45,63 +50,48 @@ void main() {
         let gl = getWebGLContext(canvas, true)
         initShaders(gl, document.getElementById("3d-vertex-shader").text, document.getElementById("3d-fragment-shader").text)
         // Set the clear color and enable the depth test
+        //
         var n = initVertexBuffers(gl);
         if (n < 0) {
             console.log('Failed to set the vertex information');
             return;
         }
 
+        // Set the clear color and enable the depth test
         gl.clearColor(0, 0, 0, 1);
         gl.enable(gl.DEPTH_TEST);
 
+        // Get the storage locations of uniform variables and so on
         var u_MvpMatrix = gl.getUniformLocation(gl.program, 'u_MvpMatrix');
-        var u_NormalMatrix = gl.getUniformLocation(gl.program, 'u_NormalMatrix');
+        var u_DiffuseLight = gl.getUniformLocation(gl.program, 'u_DiffuseLight');
         var u_LightDirection = gl.getUniformLocation(gl.program, 'u_LightDirection');
-        if (!u_MvpMatrix || !u_NormalMatrix || !u_LightDirection) {
+        var u_AmbientLight = gl.getUniformLocation(gl.program, 'u_AmbientLight');
+        if (!u_MvpMatrix || !u_DiffuseLight || !u_LightDirection || !u_AmbientLight) {
             console.log('Failed to get the storage location');
             return;
         }
 
-        var vpMatrix = new Matrix4();   // View projection matrix
-        // Calculate the view projection matrix
-        vpMatrix.setPerspective(30, canvas.width / canvas.height, 1, 100);
-        vpMatrix.lookAt(3, 3, 7, 0, 0, 0, 0, 1, 0);
+        // Set the light color (white)
+        gl.uniform3f(u_DiffuseLight, 1.0, 1.0, 1.0);
         // Set the light direction (in the world coordinate)
         var lightDirection = new Vector3([0.5, 3.0, 4.0]);
         lightDirection.normalize();     // Normalize
         gl.uniform3fv(u_LightDirection, lightDirection.elements);
+        // Set the ambient light
+        gl.uniform3f(u_AmbientLight, 0.2, 0.2, 0.2);
 
-        var currentAngle = 0.0;  // Current rotation angle
-        var modelMatrix = new Matrix4();  // Model matrix
-        var mvpMatrix = new Matrix4();    // Model view projection matrix
-        var normalMatrix = new Matrix4(); // Transformation matrix for normals
+        // Calculate the view projection matrix
+        var mvpMatrix = new Matrix4();  // Model view projection matrix
+        mvpMatrix.setPerspective(30, canvas.width / canvas.height, 1, 100);
+        mvpMatrix.lookAt(3, 3, 7, 0, 0, 0, 0, 1, 0);
+        // Pass the model view projection matrix to the variable u_MvpMatrix
+        gl.uniformMatrix4fv(u_MvpMatrix, false, mvpMatrix.elements);
 
+        // Clear color and depth buffer
+        gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 
-        let rot = 0.0
-
-        function draw() {
-            rot = rot + 1.0
-
-            modelMatrix.setRotate(rot, 0, 1, 0)
-
-            mvpMatrix.set(vpMatrix).multiply(modelMatrix);
-            gl.uniformMatrix4fv(u_MvpMatrix, false, mvpMatrix.elements);
-
-            // Pass the matrix to transform the normal based on the model matrix to u_NormalMatrix
-            normalMatrix.setInverseOf(modelMatrix);
-            normalMatrix.transpose();
-            gl.uniformMatrix4fv(u_NormalMatrix, false, normalMatrix.elements);
-
-            // Clear color and depth buffer
-            gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
-
-            // Draw the cube
-            gl.drawElements(gl.TRIANGLES, n, gl.UNSIGNED_BYTE, 0);
-            requestAnimationFrame(draw)
-        }
-
-        draw()
-
+        // Draw the cube
+        gl.drawElements(gl.TRIANGLES, n, gl.UNSIGNED_BYTE, 0);
     }
 
     function initVertexBuffers(gl) {
@@ -154,9 +144,9 @@ void main() {
         ]);
 
         // Write the vertex property to buffers (coordinates, colors and normals)
-        if (!initArrayBuffer(gl, 'a_Position', vertices, 3, gl.FLOAT)) return -1;
-        if (!initArrayBuffer(gl, 'a_Color', colors, 3, gl.FLOAT)) return -1;
-        if (!initArrayBuffer(gl, 'a_Normal', normals, 3, gl.FLOAT)) return -1;
+        if (!initArrayBuffer(gl, 'a_Position', vertices, 3)) return -1;
+        if (!initArrayBuffer(gl, 'a_Color', colors, 3)) return -1;
+        if (!initArrayBuffer(gl, 'a_Normal', normals, 3)) return -1;
 
         // Unbind the buffer object
         gl.bindBuffer(gl.ARRAY_BUFFER, null);
@@ -173,7 +163,7 @@ void main() {
         return indices.length;
     }
 
-    function initArrayBuffer(gl, attribute, data, num, type) {
+    function initArrayBuffer(gl, attribute, data, num) {
         // Create a buffer object
         var buffer = gl.createBuffer();
         if (!buffer) {
@@ -189,26 +179,13 @@ void main() {
             console.log('Failed to get the storage location of ' + attribute);
             return false;
         }
-        gl.vertexAttribPointer(a_attribute, num, type, false, 0, 0);
+        gl.vertexAttribPointer(a_attribute, num, gl.FLOAT, false, 0, 0);
         // Enable the assignment of the buffer object to the attribute variable
         gl.enableVertexAttribArray(a_attribute);
+
         return true;
     }
 
-    // Rotation angle (degrees/second)
-    var ANGLE_STEP = 30.0;
-    // Last time that this function was called
-    var g_last = Date.now();
-
-    function animate(angle) {
-        // Calculate the elapsed time
-        var now = Date.now();
-        var elapsed = now - g_last;
-        g_last = now;
-        // Update the current rotation angle (adjusted by the elapsed time)
-        var newAngle = angle + (ANGLE_STEP * elapsed) / 1000.0;
-        return newAngle %= 360;
-    }
 
 </script>
 </body>
